@@ -576,7 +576,7 @@ export default function HeroSection() {
                     : 'bg-white/60 border-blue-200/30 hover:bg-white/80'
                 }`}>
                   <a 
-                    href="https://7framesaryan.vercel.app/#home"
+                    href="https://7framesaryan-photography.vercel.app/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex flex-col items-center w-full"

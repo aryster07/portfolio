@@ -1,0 +1,8 @@
+<!-- SVG Placeholder for Designer Bitmoji -->
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#3B82F6"/>
+  <circle cx="100" cy="70" r="30" fill="#DBEAFE"/>
+  <path d="M60 150 C60 130, 75 120, 100 120 C125 120, 140 130, 140 150 L60 150 Z" fill="#DBEAFE"/>
+  <rect x="85" y="90" width="30" height="20" fill="#1E40AF" rx="10"/>
+  <text x="100" y="180" text-anchor="middle" fill="#DBEAFE" font-family="Arial" font-size="12">Designer</text>
+</svg>

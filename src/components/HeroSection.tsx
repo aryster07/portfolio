@@ -1087,7 +1087,7 @@ export default function HeroSection() {
                     }`} />
                     
                     <a 
-                      href="#portfolio"
+                      href="https://7framesaryan-design.vercel.app/"
                       className="relative flex flex-col items-center space-y-6 lg:space-y-8 text-center w-full"
                     >
                       <div className="w-24 h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex items-center justify-center">

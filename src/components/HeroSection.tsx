@@ -544,29 +544,34 @@ export default function HeroSection() {
                     ? 'bg-neutral-900/20 border-neutral-800/30 hover:bg-neutral-900/30' 
                     : 'bg-white/60 border-blue-200/30 hover:bg-white/80'
                 }`}>
-                  <div className="w-20 h-20 mb-4 flex-shrink-0">
-                    <img 
-                      src="/images/bitmoji/bitmoji_designer_clean.png" 
-                      alt="Designer Bitmoji"
-                      className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 filter brightness-90"
-                      onError={(e) => {
-                        const target = e.target as HTMLImageElement;
-                        target.src = "/images/bitmoji/designer-bitmoji.svg";
-                      }}
-                    />
-                  </div>
-                  <div>
-                    <h4 className={`text-base font-medium mb-2 transition-colors duration-500 ${
-                      isDarkMode ? 'text-neutral-200' : 'text-gray-800'
-                    }`}>
-                      UI/UX Designer
-                    </h4>
-                    <p className={`text-sm font-light transition-colors duration-500 ${
-                      isDarkMode ? 'text-neutral-400' : 'text-gray-600'
-                    }`}>
-                      Design & UX
-                    </p>
-                  </div>
+                  <a 
+                    href="https://7framesaryan-design.vercel.app/"
+                    className="flex flex-col items-center w-full"
+                  >
+                    <div className="w-20 h-20 mb-4 flex-shrink-0">
+                      <img 
+                        src="/images/bitmoji/bitmoji_designer_clean.png" 
+                        alt="Designer Bitmoji"
+                        className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 filter brightness-90"
+                        onError={(e) => {
+                          const target = e.target as HTMLImageElement;
+                          target.src = "/images/bitmoji/designer-bitmoji.svg";
+                        }}
+                      />
+                    </div>
+                    <div>
+                      <h4 className={`text-base font-medium mb-2 transition-colors duration-500 ${
+                        isDarkMode ? 'text-neutral-200' : 'text-gray-800'
+                      }`}>
+                        UI/UX Designer
+                      </h4>
+                      <p className={`text-sm font-light transition-colors duration-500 ${
+                        isDarkMode ? 'text-neutral-400' : 'text-gray-600'
+                      }`}>
+                        Design & UX
+                      </p>
+                    </div>
+                  </a>
                 </div>
 
                 {/* Photographer Card */}
@@ -1081,7 +1086,10 @@ export default function HeroSection() {
                         : 'bg-gradient-to-br from-blue-50/80 to-purple-50/80'
                     }`} />
                     
-                    <div className="relative flex flex-col items-center space-y-6 lg:space-y-8 text-center">
+                    <a 
+                      href="#portfolio"
+                      className="relative flex flex-col items-center space-y-6 lg:space-y-8 text-center w-full"
+                    >
                       <div className="w-24 h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex items-center justify-center">
                         <motion.div
                           whileHover={{ 
@@ -1103,22 +1111,22 @@ export default function HeroSection() {
                         </motion.div>
                       </div>
                     
-                    {/* Title Below Bitmoji */}
-                    <div className="text-center space-y-4">
-                      <h4 className={`text-xl lg:text-2xl xl:text-3xl font-medium tracking-wide transition-colors duration-500 ${
-                        isDarkMode 
-                          ? 'bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent' 
-                          : 'text-gray-800'
-                      }`}>
-                        UI/UX Designer
-                      </h4>
-                      <p className={`text-lg lg:text-xl leading-relaxed font-light transition-colors duration-500 ${
-                        isDarkMode ? 'text-neutral-400' : 'text-gray-600'
-                      }`}>
-                        Design thinking & User experience
-                      </p>
-                    </div>
-                  </div>
+                      {/* Title Below Bitmoji */}
+                      <div className="text-center space-y-4">
+                        <h4 className={`text-xl lg:text-2xl xl:text-3xl font-medium tracking-wide transition-colors duration-500 ${
+                          isDarkMode 
+                            ? 'bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent' 
+                            : 'text-gray-800'
+                        }`}>
+                          UI/UX Designer
+                        </h4>
+                        <p className={`text-lg lg:text-xl leading-relaxed font-light transition-colors duration-500 ${
+                          isDarkMode ? 'text-neutral-400' : 'text-gray-600'
+                        }`}>
+                          Design thinking & User experience
+                        </p>
+                      </div>
+                    </a>
                   </div>
 
                   {/* Photographer Card - Enhanced */}

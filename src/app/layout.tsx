@@ -69,6 +69,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth">
+      <head>
+        <link rel="preload" href="/images/profile/20250206_051456000_iOS.jpg" as="image" />
+        <link rel="preload" href="/images/bitmoji/bitmoji_designer_clean.png" as="image" />
+        <link rel="preload" href="/images/bitmoji/bitmoji_photographer_clean.png" as="image" />
+      </head>
       <body className={`${inter.variable} antialiased`}>
         {children}
         <Analytics />

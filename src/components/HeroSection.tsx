@@ -99,269 +99,54 @@ export default function HeroSection() {
         {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
       </motion.button>
 
-      {/* Modern Animated Background with Dynamic Gradients */}
+      {/* Optimized Lightweight Background */}
       <div className="absolute inset-0 -z-10 pointer-events-none overflow-hidden">
         {isDarkMode ? (
           <>
-            {/* Dark Mode Sophisticated Background */}
-            <div className="absolute inset-0 opacity-35">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_40%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(163,163,163,0.06),transparent_40%)]" />
-              <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,rgba(255,255,255,0.05)_60deg,transparent_120deg)]" />
-              <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(255,255,255,0.02)_50%,transparent_75%)] bg-[length:60px_60px] animate-pulse" />
+            {/* Simplified Dark Mode Background */}
+            <div className="absolute inset-0 opacity-20">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.05),transparent_50%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(163,163,163,0.03),transparent_50%)]" />
             </div>
             
-            {/* Animated Gradient Orbs - Dark Mode */}
-            <motion.div
-              animate={{
-                x: [0, 120, 0],
-                y: [0, -60, 0],
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                duration: 18,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-neutral-700/30 via-zinc-600/20 to-transparent rounded-full blur-3xl"
-            />
-            
-            <motion.div
-              animate={{
-                x: [0, -90, 0],
-                y: [0, 70, 0],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 22,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 5,
-              }}
-              className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-neutral-600/25 via-zinc-700/15 to-transparent rounded-full blur-3xl"
-            />
-            
-            {/* Rotating Conic Gradient - Dark Mode */}
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-              }}
-              transition={{
-                duration: 60,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[conic-gradient(from_0deg,transparent,rgba(255,255,255,0.02),transparent)] rounded-full"
-            />
-            
-            {/* Pulsing Gradient Overlay - Dark Mode */}
-            <motion.div
-              animate={{
-                opacity: [0.1, 0.3, 0.1],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 8,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute inset-0 bg-gradient-to-br from-neutral-900/20 via-transparent to-zinc-900/20"
-            />
+            {/* Single Optimized Gradient Orb */}
+            <div className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-neutral-700/20 via-zinc-600/10 to-transparent rounded-full blur-3xl animate-pulse" />
           </>
         ) : (
           <>
-            {/* Light Mode Modern Background - Enhanced with Gold */}
-            <div className="absolute inset-0 opacity-60">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(59,130,246,0.25),transparent_40%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(168,85,247,0.20),transparent_40%)]" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_40%,rgba(251,191,36,0.18),transparent_50%)]" />
-              <div className="absolute inset-0 bg-[conic-gradient(from_0deg_at_50%_50%,transparent_0deg,rgba(59,130,246,0.12)_60deg,transparent_120deg)]" />
-              <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(251,191,36,0.08)_50%,transparent_75%)] bg-[length:80px_80px] animate-pulse" />
+            {/* Simplified Light Mode Background */}
+            <div className="absolute inset-0 opacity-30">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_30%,rgba(59,130,246,0.15),transparent_50%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_70%,rgba(168,85,247,0.10),transparent_50%)]" />
             </div>
             
-            {/* Animated Gradient Orbs - Light Mode with Gold */}
-            <motion.div
-              animate={{
-                x: [0, 120, 0],
-                y: [0, -60, 0],
-                scale: [1, 1.3, 1],
-              }}
-              transition={{
-                duration: 18,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-300/50 via-amber-300/35 to-transparent rounded-full blur-3xl"
-            />
-            
-            <motion.div
-              animate={{
-                x: [0, -90, 0],
-                y: [0, 70, 0],
-                scale: [1, 1.2, 1],
-              }}
-              transition={{
-                duration: 22,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 5,
-              }}
-              className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-purple-300/40 via-yellow-300/30 to-transparent rounded-full blur-3xl"
-            />
-            
-            {/* Additional Golden Orb */}
-            <motion.div
-              animate={{
-                x: [0, 80, 0],
-                y: [0, -40, 0],
-                scale: [1, 1.25, 1],
-              }}
-              transition={{
-                duration: 25,
-                repeat: Infinity,
-                ease: "easeInOut",
-                delay: 10,
-              }}
-              className="absolute top-1/2 right-1/4 w-64 h-64 bg-gradient-to-br from-amber-400/35 via-yellow-400/25 to-transparent rounded-full blur-3xl"
-            />
-            
-            {/* Rotating Conic Gradient - Light Mode */}
-            <motion.div
-              animate={{
-                rotate: [0, 360],
-              }}
-              transition={{
-                duration: 60,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[conic-gradient(from_0deg,transparent,rgba(59,130,246,0.03),transparent)] rounded-full"
-            />
-            
-            {/* Pulsing Gradient Overlay - Light Mode */}
-            <motion.div
-              animate={{
-                opacity: [0.2, 0.4, 0.2],
-                scale: [1, 1.1, 1],
-              }}
-              transition={{
-                duration: 10,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-              className="absolute inset-0 bg-gradient-to-br from-blue-100/30 via-amber-50/20 to-purple-100/30"
-            />
+            {/* Single Optimized Gradient Orb */}
+            <div className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-l from-blue-300/30 via-purple-300/20 to-transparent rounded-full blur-3xl animate-pulse" />
           </>
         )}
       </div>
 
-      {/* Enhanced Floating Bitmoji Characters with Modern Aesthetics */}
+      {/* Simplified Floating Bitmoji Characters */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none -z-5">
         {/* Top Right - Photographer */}
-        <motion.div
-          animate={{
-            x: [0, 20, 0],
-            y: [0, -15, 0],
-            rotate: [0, 3, 0],
-            scale: [1, 1.05, 1],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut",
-          }}
-          className="absolute top-1/4 right-12 w-16 h-16 opacity-40"
-        >
+        <div className="absolute top-1/4 right-12 w-16 h-16 opacity-30 animate-pulse">
           <img 
             src="/images/bitmoji/bitmoji_photographer_clean.png" 
             alt="Photographer Bitmoji"
             className="w-full h-full object-contain"
+            loading="lazy"
           />
-        </motion.div>
+        </div>
         
         {/* Bottom Left - Designer */}
-        <motion.div
-          animate={{
-            x: [0, -18, 0],
-            y: [0, 12, 0],
-            scale: [1, 1.08, 1],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 3,
-          }}
-          className="absolute bottom-1/3 left-16 w-14 h-14 opacity-40"
-        >
+        <div className="absolute bottom-1/3 left-16 w-14 h-14 opacity-30 animate-bounce">
           <img 
             src="/images/bitmoji/bitmoji_designer_clean.png" 
             alt="Designer Bitmoji"
             className="w-full h-full object-contain"
+            loading="lazy"
           />
-        </motion.div>
-
-        {/* Top Left - Additional Floating Element */}
-        <motion.div
-          animate={{
-            x: [0, 15, 0],
-            y: [0, -10, 0],
-            rotate: [0, -2, 0],
-            scale: [1, 1.06, 1],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 6,
-          }}
-          className={`absolute top-2/3 right-1/4 w-12 h-12 rounded-lg shadow-lg backdrop-blur-sm border transition-all duration-500 ${
-            isDarkMode 
-              ? 'bg-neutral-900/15 border-neutral-700/20 opacity-40' 
-              : 'bg-white/30 border-blue-200/20 opacity-50'
-          }`}
-        >
-          <img 
-            src="/images/bitmoji/bitmoji_photographer_clean.png" 
-            alt="Photographer Bitmoji"
-            className={`w-full h-full object-contain p-1.5 transition-all duration-500 ${
-              isDarkMode 
-                ? 'filter brightness-70 contrast-110' 
-                : 'filter brightness-110 contrast-105'
-            }`}
-          />
-        </motion.div>
-
-        {/* Bottom Right - Additional Floating Element */}
-        <motion.div
-          animate={{
-            x: [0, -12, 0],
-            y: [0, 8, 0],
-            rotate: [0, 2, 0],
-            scale: [1, 1.04, 1],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 9,
-          }}
-          className={`absolute bottom-1/4 right-20 w-10 h-10 rounded-lg shadow-lg backdrop-blur-sm border transition-all duration-500 ${
-            isDarkMode 
-              ? 'bg-neutral-900/15 border-neutral-700/20 opacity-35' 
-              : 'bg-white/30 border-purple-200/20 opacity-45'
-          }`}
-        >
-          <img 
-            src="/images/bitmoji/bitmoji_designer_clean.png" 
-            alt="Designer Bitmoji"
-            className={`w-full h-full object-contain p-1.5 transition-all duration-500 ${
-              isDarkMode 
-                ? 'filter brightness-70 contrast-110' 
-                : 'filter brightness-110 contrast-105'
-            }`}
-          />
-        </motion.div>
+        </div>
       </div>
 
       {/* Auto Layout Container - Optimized for Full Viewport */}
@@ -415,6 +200,9 @@ export default function HeroSection() {
                         src="/images/profile/20250206_051456000_iOS.jpg" 
                         alt="Aryan Profile"
                         className="w-full h-full object-cover filter contrast-110 brightness-105"
+                        loading="eager"
+                        width="200"
+                        height="200"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Crect width='200' height='200' fill='%23171717'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23d4d4d8' font-family='system-ui' font-size='16'%3EProfile%3C/text%3E%3C/svg%3E";
@@ -539,83 +327,88 @@ export default function HeroSection() {
               
               <div className="grid grid-cols-2 gap-4">
                 {/* UI/UX Designer Card */}
-                <div className={`flex flex-col items-center p-6 rounded-3xl border cursor-pointer group text-center transition-all duration-500 backdrop-blur-sm ${
-                  isDarkMode 
-                    ? 'bg-neutral-900/20 border-neutral-800/30 hover:bg-neutral-900/30' 
-                    : 'bg-white/60 border-blue-200/30 hover:bg-white/80'
-                }`}>
-                  <a 
-                    href="https://7framesaryan-design.vercel.app/"
-                    className="flex flex-col items-center w-full"
-                  >
-                    <div className="w-20 h-20 mb-4 flex-shrink-0">
-                      <img 
-                        src="/images/bitmoji/bitmoji_designer_clean.png" 
-                        alt="Designer Bitmoji"
-                        className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 filter brightness-90"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/images/bitmoji/designer-bitmoji.svg";
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <h4 className={`text-base font-medium mb-2 transition-colors duration-500 ${
-                        isDarkMode ? 'text-neutral-200' : 'text-gray-800'
-                      }`}>
-                        UI/UX Designer
-                      </h4>
-                      <p className={`text-sm font-light transition-colors duration-500 ${
-                        isDarkMode ? 'text-neutral-400' : 'text-gray-600'
-                      }`}>
-                        Design & UX
-                      </p>
-                    </div>
-                  </a>
-                </div>
+                <a 
+                  href="https://7framesaryan-design.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex flex-col items-center p-6 rounded-3xl border cursor-pointer group text-center transition-all duration-500 backdrop-blur-sm ${
+                    isDarkMode 
+                      ? 'bg-neutral-900/20 border-neutral-800/30 hover:bg-neutral-900/30' 
+                      : 'bg-white/60 border-blue-200/30 hover:bg-white/80'
+                  }`}
+                >
+                  <div className="w-20 h-20 mb-4 flex-shrink-0">
+                    <img 
+                      src="/images/bitmoji/bitmoji_designer_clean.png" 
+                      alt="Designer Bitmoji"
+                      className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 filter brightness-90"
+                      loading="lazy"
+                      width="80"
+                      height="80"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/images/bitmoji/designer-bitmoji.svg";
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h4 className={`text-base font-medium mb-2 transition-colors duration-500 ${
+                      isDarkMode ? 'text-neutral-200' : 'text-gray-800'
+                    }`}>
+                      UI/UX Designer
+                    </h4>
+                    <p className={`text-sm font-light transition-colors duration-500 ${
+                      isDarkMode ? 'text-neutral-400' : 'text-gray-600'
+                    }`}>
+                      Design & UX
+                    </p>
+                  </div>
+                </a>
 
                 {/* Photographer Card */}
-                <div className={`flex flex-col items-center p-6 rounded-3xl border cursor-pointer group text-center transition-all duration-500 backdrop-blur-sm ${
-                  isDarkMode 
-                    ? 'bg-neutral-900/20 border-neutral-800/30 hover:bg-neutral-900/30' 
-                    : 'bg-white/60 border-blue-200/30 hover:bg-white/80'
-                }`}>
-                  <a 
-                    href="https://7framesaryan-photography.vercel.app/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex flex-col items-center w-full"
-                  >
-                    <div className="w-20 h-20 mb-4 flex-shrink-0">
-                      <img 
-                        src="/images/bitmoji/bitmoji_photographer_clean.png" 
-                        alt="Photographer Bitmoji"
-                        className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 filter brightness-90"
-                        onError={(e) => {
-                          const target = e.target as HTMLImageElement;
-                          target.src = "/images/bitmoji/photographer-bitmoji.svg";
-                        }}
-                      />
-                    </div>
-                    <div>
-                      <h4 className={`text-base font-medium mb-2 transition-colors duration-500 ${
-                        isDarkMode ? 'text-neutral-200' : 'text-gray-800'
-                      }`}>
-                        Photographer
-                      </h4>
-                      <p className={`text-sm font-light transition-colors duration-500 ${
-                        isDarkMode ? 'text-neutral-400' : 'text-gray-600'
-                      }`}>
-                        Crazy shots
-                      </p>
-                    </div>
-                  </a>
+                <a 
+                  href="https://7framesaryan-photography.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`flex flex-col items-center p-6 rounded-3xl border cursor-pointer group text-center transition-all duration-500 backdrop-blur-sm ${
+                    isDarkMode 
+                      ? 'bg-neutral-900/20 border-neutral-800/30 hover:bg-neutral-900/30' 
+                      : 'bg-white/60 border-blue-200/30 hover:bg-white/80'
+                  }`}
+                >
+                  <div className="w-20 h-20 mb-4 flex-shrink-0">
+                    <img 
+                      src="/images/bitmoji/bitmoji_photographer_clean.png" 
+                      alt="Photographer Bitmoji"
+                      className="w-full h-full object-contain drop-shadow-lg group-hover:scale-105 transition-transform duration-300 filter brightness-90"
+                      loading="lazy"
+                      width="80"
+                      height="80"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/images/bitmoji/photographer-bitmoji.svg";
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <h4 className={`text-base font-medium mb-2 transition-colors duration-500 ${
+                      isDarkMode ? 'text-neutral-200' : 'text-gray-800'
+                    }`}>
+                      Photographer
+                    </h4>
+                    <p className={`text-sm font-light transition-colors duration-500 ${
+                      isDarkMode ? 'text-neutral-400' : 'text-gray-600'
+                    }`}>
+                      Crazy shots
+                    </p>
+                  </div>
+                </a>
                 </div>
               </div>
             </div>
 
-            {/* 5. Sophisticated About Section */}
-            <div className="w-full max-w-2xl">
+            {/* 5. Sophisticated About Section - Mobile Only */}
+            <div className="lg:hidden w-full max-w-2xl">
               <div className={`rounded-3xl border p-8 shadow-2xl backdrop-blur-sm transition-all duration-500 ${
                 isDarkMode 
                   ? 'bg-neutral-900/20 border-neutral-800/30' 
@@ -672,8 +465,8 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* 6. Refined Social Links */}
-            <div className="w-full max-w-sm mb-12 relative z-20">
+            {/* 6. Refined Social Links - Mobile Only */}
+            <div className="lg:hidden w-full max-w-sm mb-12 relative z-20">
               <h3 className="text-lg font-light text-center mb-6 text-neutral-300 tracking-wide">Connect with me</h3>
               <div className="flex items-center justify-center gap-4 flex-wrap">
                 
@@ -772,6 +565,9 @@ export default function HeroSection() {
                         src="/images/profile/20250206_051456000_iOS.jpg" 
                         alt="Aryan Profile"
                         className="w-full h-full object-cover"
+                        loading="eager"
+                        width="300"
+                        height="300"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.style.display = 'none';
@@ -1074,11 +870,14 @@ export default function HeroSection() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 w-full">
                   
                   {/* UI/UX Designer Card - Enhanced */}
-                  <div className={`relative group p-8 lg:p-10 rounded-3xl border transition-all duration-500 cursor-pointer overflow-hidden ${
-                    isDarkMode 
-                      ? 'bg-neutral-900/40 border-neutral-800/50 hover:bg-neutral-900/60 hover:border-neutral-700' 
-                      : 'bg-white/80 border-blue-200/50 hover:bg-white hover:border-blue-300/70 hover:shadow-xl'
-                  }`}>
+                  <a 
+                    href="https://7framesaryan-design.vercel.app/"
+                    className={`relative group p-8 lg:p-10 rounded-3xl border transition-all duration-500 cursor-pointer overflow-hidden block ${
+                      isDarkMode 
+                        ? 'bg-neutral-900/40 border-neutral-800/50 hover:bg-neutral-900/60 hover:border-neutral-700' 
+                        : 'bg-white/80 border-blue-200/50 hover:bg-white hover:border-blue-300/70 hover:shadow-xl'
+                    }`}
+                  >
                     {/* Background Gradient */}
                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                       isDarkMode 
@@ -1086,29 +885,22 @@ export default function HeroSection() {
                         : 'bg-gradient-to-br from-blue-50/80 to-purple-50/80'
                     }`} />
                     
-                    <a 
-                      href="https://7framesaryan-design.vercel.app/"
-                      className="relative flex flex-col items-center space-y-6 lg:space-y-8 text-center w-full"
-                    >
+                    <div className="relative flex flex-col items-center space-y-6 lg:space-y-8 text-center w-full">
                       <div className="w-24 h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex items-center justify-center">
-                        <motion.div
-                          whileHover={{ 
-                            scale: 1.1,
-                            transition: { duration: 0.4, ease: "easeOut" }
-                          }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-full h-full cursor-pointer"
-                        >
+                        <div className="w-full h-full hover:scale-110 transition-transform duration-300 cursor-pointer">
                           <img 
                             src="/images/bitmoji/bitmoji_designer_clean.png" 
                             alt="Designer Bitmoji"
                             className="w-full h-full object-contain drop-shadow-2xl"
+                            loading="lazy"
+                            width="120"
+                            height="120"
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
                               target.src = "/images/bitmoji/designer-bitmoji.svg";
                             }}
                           />
-                        </motion.div>
+                        </div>
                       </div>
                     
                       {/* Title Below Bitmoji */}
@@ -1126,15 +918,20 @@ export default function HeroSection() {
                           Design thinking & User experience
                         </p>
                       </div>
-                    </a>
-                  </div>
+                    </div>
+                  </a>
 
                   {/* Photographer Card - Enhanced */}
-                  <div className={`relative group p-8 lg:p-10 rounded-3xl border transition-all duration-500 cursor-pointer overflow-hidden ${
-                    isDarkMode 
-                      ? 'bg-neutral-900/40 border-neutral-800/50 hover:bg-neutral-900/60 hover:border-neutral-700' 
-                      : 'bg-white/80 border-blue-200/50 hover:bg-white hover:border-blue-300/70 hover:shadow-xl'
-                  }`}>
+                  <a 
+                    href="https://7framesaryan-photography.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`relative group p-8 lg:p-10 rounded-3xl border transition-all duration-500 cursor-pointer overflow-hidden block ${
+                      isDarkMode 
+                        ? 'bg-neutral-900/40 border-neutral-800/50 hover:bg-neutral-900/60 hover:border-neutral-700' 
+                        : 'bg-white/80 border-blue-200/50 hover:bg-white hover:border-blue-300/70 hover:shadow-xl'
+                    }`}
+                  >
                     {/* Background Gradient */}
                     <div className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
                       isDarkMode 
@@ -1145,57 +942,45 @@ export default function HeroSection() {
                     <div className="relative flex flex-col items-center space-y-6 lg:space-y-8 text-center">
                       {/* Large Bitmoji - Enhanced */}
                       <div className="w-24 h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 flex items-center justify-center">
-                        <motion.div
-                          whileHover={{ 
-                            scale: 1.1,
-                            transition: { duration: 0.4, ease: "easeOut" }
-                          }}
-                          whileTap={{ scale: 0.95 }}
-                          className="w-full h-full cursor-pointer"
-                        >
-                          <a 
-                            href="https://7framesaryan-photography.vercel.app"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="block w-full h-full"
-                          >
-                            <img 
-                              src="/images/bitmoji/bitmoji_photographer_clean.png" 
-                              alt="Photographer Bitmoji"
-                              className="w-full h-full object-contain drop-shadow-2xl"
-                              onError={(e) => {
-                                const target = e.target as HTMLImageElement;
-                                target.src = "/images/bitmoji/photographer-bitmoji.svg";
-                              }}
-                            />
-                          </a>
-                        </motion.div>
+                        <div className="w-full h-full hover:scale-110 transition-transform duration-300 cursor-pointer">
+                          <img 
+                            src="/images/bitmoji/bitmoji_photographer_clean.png" 
+                            alt="Photographer Bitmoji"
+                            className="w-full h-full object-contain drop-shadow-2xl"
+                            loading="lazy"
+                            width="120"
+                            height="120"
+                            onError={(e) => {
+                              const target = e.target as HTMLImageElement;
+                              target.src = "/images/bitmoji/photographer-bitmoji.svg";
+                            }}
+                          />
+                        </div>
                       </div>
                     
-                    {/* Title Below Bitmoji */}
-                    <div className="text-center space-y-3">
-                      <h4 className={`text-lg lg:text-xl xl:text-2xl font-medium tracking-wide transition-colors duration-500 ${
-                        isDarkMode 
-                          ? 'bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent' 
-                          : 'text-gray-800'
-                      }`}>
-                        Photographer
-                      </h4>
-                      <p className={`text-base lg:text-lg leading-relaxed font-light transition-colors duration-500 ${
-                        isDarkMode ? 'text-neutral-400' : 'text-gray-600'
-                      }`}>
-                        Visual storytelling & Creative arts
-                      </p>
+                      {/* Title Below Bitmoji */}
+                      <div className="text-center space-y-3">
+                        <h4 className={`text-lg lg:text-xl xl:text-2xl font-medium tracking-wide transition-colors duration-500 ${
+                          isDarkMode 
+                            ? 'bg-gradient-to-r from-neutral-200 to-neutral-400 bg-clip-text text-transparent' 
+                            : 'text-gray-800'
+                        }`}>
+                          Photographer
+                        </h4>
+                        <p className={`text-base lg:text-lg leading-relaxed font-light transition-colors duration-500 ${
+                          isDarkMode ? 'text-neutral-400' : 'text-gray-600'
+                        }`}>
+                          Visual storytelling & Creative arts
+                        </p>
+                      </div>
                     </div>
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
-    </section>
+      </section>
     </>
   )
 }

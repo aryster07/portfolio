@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://aryanrana.com/sitemap.xml
+Sitemap: https://7frames-aryan-portfolio.vercel.app/sitemap.xml
 
 # Crawl-delay for all bots
 Crawl-delay: 1

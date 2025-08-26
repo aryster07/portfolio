@@ -3,7 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   images: {
-    domains: ['aryanrana.com'],
+    domains: ['7frames-aryan-portfolio.vercel.app'],
     formats: ['image/webp', 'image/avif'],
   },
   headers: async () => {

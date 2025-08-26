@@ -6,14 +6,14 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
         xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://aryanrana.com/</loc>
-    <lastmod>2025-08-18</lastmod>
+    <loc>https://7frames-aryan-portfolio.vercel.app/</loc>
+    <lastmod>2025-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://aryanrana.com/images/profile/20250206_051456000_iOS.jpg</image:loc>
-      <image:title>Aryan Rana (7framesaryan) - Creative Professional</image:title>
-      <image:caption>Aryan Rana (7framesaryan) - UI/UX Designer and Developer from Himachal Pradesh</image:caption>
+      <image:loc>https://7frames-aryan-portfolio.vercel.app/images/profile/20250206_051456000_iOS.jpg</image:loc>
+      <image:title>7framesaryan - Professional Portfolio</image:title>
+      <image:caption>7framesaryan - Professional Portfolio of Aryan Rana, UI/UX Designer and Developer</image:caption>
     </image:image>
   </url>
 </urlset>

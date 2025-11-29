@@ -104,8 +104,8 @@ export async function getFolderImages(folderName: string) {
                 title: `${folderName.charAt(0).toUpperCase() + folderName.slice(1)} Photo ${index + 1}`,
                 description: `A beautiful photograph from the ${folderName} collection`,
                 imageUrl: getOptimizedImageUrl(resource.public_id, {
-                    width: 400,
-                    quality: '70',
+                    width: 350,
+                    quality: '50',
                     aspectRatio,
                     useSmartCrop: true
                 }),

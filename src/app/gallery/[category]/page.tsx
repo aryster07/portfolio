@@ -177,7 +177,8 @@ export default function GalleryPage() {
                                         height={image.height}
                                         className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-110"
                                         loading={index < 6 ? "eager" : "lazy"}
-                                        quality={75}
+                                        unoptimized={true}
+                                        sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
                                     />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 

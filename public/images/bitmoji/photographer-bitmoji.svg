@@ -1,9 +1,0 @@
-<!-- SVG Placeholder for Photographer Bitmoji -->
-<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="200" height="200" fill="#F97316"/>
-  <circle cx="100" cy="70" r="30" fill="#FED7AA"/>
-  <path d="M60 150 C60 130, 75 120, 100 120 C125 120, 140 130, 140 150 L60 150 Z" fill="#FED7AA"/>
-  <rect x="80" y="85" width="40" height="25" fill="#1F2937" rx="5"/>
-  <circle cx="100" cy="97" r="8" fill="#374151"/>
-  <text x="100" y="180" text-anchor="middle" fill="#FED7AA" font-family="Arial" font-size="12">Photographer</text>
-</svg>

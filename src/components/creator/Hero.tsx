@@ -11,7 +11,7 @@ export function CreatorHero() {
             <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pb-20 pt-32">
                 <div className="lg:col-span-7 z-10 order-2 lg:order-1">
                     {/* Status Badge */}
-                    <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-900/30 text-green-400 text-sm font-medium mb-6">
+                    <div className="reveal-hidden inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-900/30 text-green-400 text-sm font-medium mb-6" style={{ transitionDelay: '0ms' }}>
                         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
                         Available
                     </div>
@@ -22,18 +22,18 @@ export function CreatorHero() {
                     </h1>
 
                     {/* Location Badge */}
-                    <div className="flex items-center gap-2 mb-6 text-gray-500">
+                    <div className="reveal-hidden flex items-center gap-2 mb-6 text-gray-500" style={{ transitionDelay: '100ms' }}>
                         <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                         </svg>
                         <span className="text-sm">Himachal Pradesh, India</span>
                     </div>
 
-                    <p className="text-lg md:text-xl leading-relaxed max-w-2xl text-gray-400">
+                    <p className="reveal-hidden text-lg md:text-xl leading-relaxed max-w-2xl text-gray-400" style={{ transitionDelay: '100ms' }}>
                         I shoot everything, just not with a gun (Yet) 💀
                     </p>
 
-                    <div className="flex flex-wrap gap-4 mt-10">
+                    <div className="reveal-hidden flex flex-wrap gap-4 mt-10" style={{ transitionDelay: '200ms' }}>
                         <a href="#contact" className="px-8 py-3 rounded-full font-bold text-sm tracking-widest uppercase interactive transition-all hover:scale-105 hover:-translate-y-1 bg-white text-black hover:bg-amber-500 hover:text-white">
                             Connect With Me
                         </a>

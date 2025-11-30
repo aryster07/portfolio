@@ -15,7 +15,7 @@ export default function Portfolio() {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [photographySections, setPhotographySections] = useState<{ title: string; images: any[] }[]>([]);
 
-  useScrollReveal();
+  useScrollReveal([mode]);
 
   // Check URL hash and query params on load to set correct mode
   useEffect(() => {

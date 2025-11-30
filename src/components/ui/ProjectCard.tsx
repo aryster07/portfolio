@@ -29,10 +29,10 @@ export const ProjectCard = ({ id, title, category, img, mode, index, skills, beh
                     className="w-full h-full bg-cover bg-center transition-all duration-700 ease-out group-hover:scale-105"
                     style={{ backgroundImage: `url(${img || ''})` }}
                 />
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-60 transition-opacity duration-300 ${mode === 'designer' ? 'bg-black' : 'bg-black'}`}></div>
+                <div className={`absolute inset-0 transition-opacity duration-300 ${mode === 'designer' ? 'bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80' : 'bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-black/80'}`}></div>
             </div>
 
-            <div className="absolute bottom-0 left-0 p-6 w-full translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+            <div className="absolute bottom-0 left-0 p-6 w-full">
                 <div className="flex flex-wrap gap-2 mb-3">
                     {skills ? (
                         skills.slice(0, 3).map((skill, i) => (
@@ -46,7 +46,7 @@ export const ProjectCard = ({ id, title, category, img, mode, index, skills, beh
                         </span>
                     )}
                 </div>
-                <h3 className={`text-2xl font-bold mb-2 leading-tight text-white`}>
+                <h3 className={`text-2xl font-bold mb-2 leading-tight text-white drop-shadow-lg`}>
                     {title}
                 </h3>
             </div>

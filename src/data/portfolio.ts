@@ -331,6 +331,266 @@ export const caseStudies: CaseStudy[] = [
         ]
     },
     {
+        id: 'vscode-extensions',
+        title: 'VS Code Extensions',
+        subtitle: '2 Custom VS Code Extensions',
+        description: 'Developed two custom Visual Studio Code extensions to enhance developer productivity and workflow efficiency.',
+        category: 'Development & Extension Design',
+        timeline: '2025-2026',
+        role: 'Developer & Designer',
+        tools: ['VS Code API', 'TypeScript', 'Node.js', 'Figma'],
+        impact: ['Enhanced developer productivity', 'Custom workflow solutions', 'Published extensions'],
+        images: {
+            hero: '/case-studies/vscode-extensions/cover.png',
+            cover: '/case-studies/vscode-extensions/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: '2',
+                label: 'Extensions',
+                description: 'Published VS Code extensions'
+            },
+            {
+                metric: '100%',
+                label: 'Custom Built',
+                description: 'Developed from scratch'
+            }
+        ],
+        challenges: [
+            'Understanding VS Code Extension API',
+            'Creating intuitive developer tools',
+            'Optimizing extension performance',
+            'Designing developer-friendly UX'
+        ],
+        solutions: [
+            'Mastered VS Code Extension development',
+            'Implemented efficient code architecture',
+            'Created seamless developer experience',
+            'Focused on performance optimization'
+        ],
+        results: [
+            'Successfully published 2 VS Code extensions',
+            'Enhanced developer workflow efficiency',
+            'Demonstrated full-stack capabilities',
+            'Gained extension development expertise'
+        ]
+    },
+    {
+        id: 'portfolio-redesign',
+        title: 'Portfolio Redesign',
+        subtitle: 'Personal Portfolio Website',
+        description: 'A complete redesign of my personal portfolio website featuring dual mode (Designer/Creator), modern animations, and optimized performance.',
+        category: 'Web Development & Design',
+        timeline: '2025-2026',
+        role: 'Full-Stack Designer & Developer',
+        tools: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Figma'],
+        impact: ['Modern dual-mode interface', 'Optimized performance', 'Type-safe codebase'],
+        images: {
+            hero: '/case-studies/portfolio-redesign/cover.png',
+            cover: '/case-studies/portfolio-redesign/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: '2',
+                label: 'Modes',
+                description: 'Designer & Creator personas'
+            },
+            {
+                metric: '100%',
+                label: 'Type-Safe',
+                description: 'TypeScript throughout'
+            },
+            {
+                metric: 'A+',
+                label: 'Performance',
+                description: 'Optimized build & caching'
+            }
+        ],
+        challenges: [
+            'Creating seamless dual-mode experience',
+            'Implementing smooth animations and transitions',
+            'Optimizing performance and load times',
+            'Building responsive design system'
+        ],
+        solutions: [
+            'Developed toggle system with smooth transitions',
+            'Used Framer Motion for fluid animations',
+            'Implemented Next.js 16 with Turbopack',
+            'Created custom cursor and scroll effects'
+        ],
+        results: [
+            'Launched modern dual-persona portfolio',
+            'Achieved excellent performance scores',
+            'Zero TypeScript errors, production-ready',
+            'Showcased full-stack development skills'
+        ]
+    },
+    {
+        id: 'self-attendance-app',
+        title: 'Self Attendance App',
+        subtitle: 'Personal Attendance Tracking System',
+        description: 'A self-developed attendance management application designed to simplify and automate personal attendance tracking with an intuitive interface.',
+        category: 'Mobile/Web App Development',
+        timeline: '2025-2026',
+        role: 'Full-Stack Developer & Designer',
+        tools: ['React', 'TypeScript', 'Firebase', 'Figma'],
+        impact: ['Automated attendance tracking', 'User-friendly interface', 'Real-time updates'],
+        images: {
+            hero: '/case-studies/self-attendance-app/cover.png',
+            cover: '/case-studies/self-attendance-app/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: '100%',
+                label: 'Automated',
+                description: 'Smart attendance tracking'
+            },
+            {
+                metric: 'Real-time',
+                label: 'Updates',
+                description: 'Instant synchronization'
+            }
+        ],
+        challenges: [
+            'Creating reliable attendance tracking logic',
+            'Designing intuitive data visualization',
+            'Implementing secure authentication',
+            'Building real-time sync functionality'
+        ],
+        solutions: [
+            'Developed robust tracking algorithm',
+            'Created clean dashboard with analytics',
+            'Integrated secure authentication system',
+            'Implemented Firebase real-time database'
+        ],
+        results: [
+            'Successfully deployed attendance app',
+            'Simplified personal attendance management',
+            'Achieved reliable tracking system',
+            'Demonstrated full-stack capabilities'
+        ]
+    },
+    {
+        id: 'figma-plugins',
+        title: 'Figma Plugins',
+        subtitle: '2 Custom Figma Plugins',
+        description: 'Developed two custom Figma plugins to enhance design workflow efficiency and automate repetitive design tasks.',
+        category: 'Design Tools & Plugins',
+        timeline: '2025-2026',
+        role: 'Plugin Developer & Designer',
+        tools: ['Figma Plugin API', 'TypeScript', 'React', 'HTML/CSS'],
+        impact: ['Enhanced design workflow', 'Automated design tasks', 'Published plugins'],
+        images: {
+            hero: '/case-studies/figma-plugins/cover.png',
+            cover: '/case-studies/figma-plugins/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: '2',
+                label: 'Plugins',
+                description: 'Custom Figma plugins'
+            },
+            {
+                metric: '100%',
+                label: 'Workflow',
+                description: 'Enhanced efficiency'
+            }
+        ],
+        challenges: [
+            'Learning Figma Plugin API',
+            'Creating useful design automation tools',
+            'Optimizing plugin performance',
+            'Designing plugin UI/UX'
+        ],
+        solutions: [
+            'Mastered Figma Plugin development',
+            'Identified common designer pain points',
+            'Built efficient and lightweight plugins',
+            'Created intuitive plugin interfaces'
+        ],
+        results: [
+            'Successfully published 2 Figma plugins',
+            'Streamlined design workflows',
+            'Demonstrated tool development skills',
+            'Enhanced designer productivity'
+        ]
+    },
+    {
+        id: 'web-game',
+        title: 'Web Game',
+        subtitle: 'Interactive Web Game (In Development)',
+        description: 'Currently developing an interactive web-based game featuring engaging gameplay mechanics and modern web technologies.',
+        category: 'Game Development',
+        timeline: 'In Progress',
+        role: 'Game Developer & Designer',
+        tools: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'Game Design'],
+        impact: ['Interactive gameplay', 'Modern web tech', 'Creative coding'],
+        images: {
+            hero: '/case-studies/web-game/cover.png',
+            cover: '/case-studies/web-game/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: 'WIP',
+                label: 'In Progress',
+                description: 'Active development'
+            },
+            {
+                metric: '100%',
+                label: 'Custom',
+                description: 'Built from scratch'
+            }
+        ],
+        challenges: [
+            'Implementing game physics and mechanics',
+            'Creating engaging gameplay experience',
+            'Optimizing browser performance',
+            'Designing game visuals and UI'
+        ],
+        solutions: [
+            'Learning game development principles',
+            'Using HTML5 Canvas for rendering',
+            'Implementing efficient game loop',
+            'Creating responsive game design'
+        ],
+        results: [
+            'Active development of web game',
+            'Exploring game development skills',
+            'Expanding creative coding abilities',
+            'Building interactive experiences'
+        ]
+    },
+    {
         id: 'gfm-expedition-redesign',
         title: 'GFM Expedition Redesign',
         subtitle: 'Web/App Redesign Project',

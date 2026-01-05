@@ -173,7 +173,7 @@ export default function GalleryPage() {
 
             {/* Gallery Title */}
             <div className="max-w-[1400px] mx-auto px-6 py-12">
-                <h1 className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-yellow-600">
+                <h1 className="text-5xl md:text-7xl font-bold mb-4 text-transparent bg-clip-text bg-linear-to-r from-amber-500 to-yellow-600">
                     {category}
                 </h1>
                 <p className="text-gray-400 text-lg">A curated collection of {category.toLowerCase()} photography</p>
@@ -184,7 +184,7 @@ export default function GalleryPage() {
                 {loading ? (
                     <div className="columns-2 md:columns-3 lg:columns-4 gap-2 md:gap-3">
                         {[...Array(12)].map((_, i) => (
-                            <div key={i} className="bg-neutral-800 rounded-md animate-pulse aspect-[4/5] mb-2 md:mb-3 break-inside-avoid" />
+                            <div key={i} className="bg-neutral-800 rounded-md animate-pulse aspect-4/5 mb-2 md:mb-3 break-inside-avoid" />
                         ))}
                     </div>
                 ) : images.length === 0 ? (

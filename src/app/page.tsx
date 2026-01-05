@@ -114,15 +114,15 @@ export default function Portfolio() {
           
           {/* Animated Glow Effect */}
           <div className={`absolute inset-0 transition-opacity duration-500 ${mode === 'creator' ? 'opacity-100' : 'opacity-0'}`}>
-            <div className="absolute inset-0 bg-gradient-to-r from-violet-600/20 via-purple-600/20 to-fuchsia-600/20 blur-xl" />
+            <div className="absolute inset-0 bg-linear-to-r from-violet-600/20 via-purple-600/20 to-fuchsia-600/20 blur-xl" />
           </div>
           
           {/* Sliding Pill Background */}
           <div
             className={`absolute top-1.5 bottom-1.5 rounded-xl transition-all duration-500 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0
             ${mode === 'designer'
-                ? 'left-1.5 w-[120px] bg-gradient-to-r from-slate-900 to-slate-800 shadow-lg shadow-slate-900/25'
-                : 'left-[126px] w-[120px] bg-gradient-to-r from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg shadow-purple-500/40'}`}
+                ? 'left-1.5 w-[120px] bg-linear-to-r from-slate-900 to-slate-800 shadow-lg shadow-slate-900/25'
+                : 'left-[126px] w-[120px] bg-linear-to-r from-violet-600 via-purple-600 to-fuchsia-600 shadow-lg shadow-purple-500/40'}`}
           />
           
           <div className="relative z-10 flex">

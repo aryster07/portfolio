@@ -332,14 +332,14 @@ export const caseStudies: CaseStudy[] = [
     },
     {
         id: 'vscode-extensions',
-        title: 'VS Code Extensions',
-        subtitle: '2 Custom VS Code Extensions',
-        description: 'Developed two custom Visual Studio Code extensions to enhance developer productivity and workflow efficiency.',
-        category: 'Development & Extension Design',
+        title: 'Chrome Extensions',
+        subtitle: '2 Custom Chrome Extensions',
+        description: 'Developed two custom Chrome browser extensions to enhance user productivity and browsing experience.',
+        category: 'Browser Extension Development',
         timeline: '2025-2026',
         role: 'Developer & Designer',
-        tools: ['VS Code API', 'TypeScript', 'Node.js', 'Figma'],
-        impact: ['Enhanced developer productivity', 'Custom workflow solutions', 'Published extensions'],
+        tools: ['Chrome Extension API', 'JavaScript', 'HTML/CSS', 'Manifest V3'],
+        impact: ['Enhanced browsing productivity', 'Custom browser solutions', 'Published extensions'],
         images: {
             hero: '/case-studies/vscode-extensions/cover.png',
             cover: '/case-studies/vscode-extensions/cover.png',
@@ -354,7 +354,7 @@ export const caseStudies: CaseStudy[] = [
             {
                 metric: '2',
                 label: 'Extensions',
-                description: 'Published VS Code extensions'
+                description: 'Published Chrome extensions'
             },
             {
                 metric: '100%',
@@ -363,20 +363,20 @@ export const caseStudies: CaseStudy[] = [
             }
         ],
         challenges: [
-            'Understanding VS Code Extension API',
-            'Creating intuitive developer tools',
+            'Understanding Chrome Extension API',
+            'Creating intuitive browser tools',
             'Optimizing extension performance',
-            'Designing developer-friendly UX'
+            'Adapting to Manifest V3 requirements'
         ],
         solutions: [
-            'Mastered VS Code Extension development',
+            'Mastered Chrome Extension development',
             'Implemented efficient code architecture',
-            'Created seamless developer experience',
+            'Created seamless user experience',
             'Focused on performance optimization'
         ],
         results: [
-            'Successfully published 2 VS Code extensions',
-            'Enhanced developer workflow efficiency',
+            'Successfully published 2 Chrome extensions',
+            'Enhanced user browsing experience',
             'Demonstrated full-stack capabilities',
             'Gained extension development expertise'
         ]
@@ -499,7 +499,6 @@ export const caseStudies: CaseStudy[] = [
         tools: ['Figma Plugin API', 'TypeScript', 'React', 'HTML/CSS'],
         impact: ['Enhanced design workflow', 'Automated design tasks', 'Published on Figma Community'],
         behanceUrl: 'https://www.figma.com/community/plugin/1587789564837977428/compmagnet',
-        link: 'https://www.figma.com/community/plugin/1587789564837977428/compmagnet',
         images: {
             hero: '/case-studies/figma-plugins/cover.png',
             cover: '/case-studies/figma-plugins/cover.png',

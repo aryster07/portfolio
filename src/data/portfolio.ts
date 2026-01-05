@@ -490,14 +490,16 @@ export const caseStudies: CaseStudy[] = [
     },
     {
         id: 'figma-plugins',
-        title: 'Figma Plugins',
-        subtitle: '2 Custom Figma Plugins',
-        description: 'Developed two custom Figma plugins to enhance design workflow efficiency and automate repetitive design tasks.',
+        title: 'Figma Plugins: CompMagnet & Font Manager',
+        subtitle: '2 Published Figma Community Plugins',
+        description: 'Developed and published two Figma plugins: CompMagnet for component management and Font Manager for efficient font handling. Both plugins are available on the Figma Community.',
         category: 'Design Tools & Plugins',
         timeline: '2025-2026',
         role: 'Plugin Developer & Designer',
         tools: ['Figma Plugin API', 'TypeScript', 'React', 'HTML/CSS'],
-        impact: ['Enhanced design workflow', 'Automated design tasks', 'Published plugins'],
+        impact: ['Enhanced design workflow', 'Automated design tasks', 'Published on Figma Community'],
+        behanceUrl: 'https://www.figma.com/community/plugin/1587789564837977428/compmagnet',
+        link: 'https://www.figma.com/community/plugin/1587789564837977428/compmagnet',
         images: {
             hero: '/case-studies/figma-plugins/cover.png',
             cover: '/case-studies/figma-plugins/cover.png',
@@ -512,31 +514,31 @@ export const caseStudies: CaseStudy[] = [
             {
                 metric: '2',
                 label: 'Plugins',
-                description: 'Custom Figma plugins'
+                description: 'CompMagnet & Font Manager'
             },
             {
-                metric: '100%',
-                label: 'Workflow',
-                description: 'Enhanced efficiency'
+                metric: 'Published',
+                label: 'Figma Community',
+                description: 'Available to all designers'
             }
         ],
         challenges: [
-            'Learning Figma Plugin API',
-            'Creating useful design automation tools',
-            'Optimizing plugin performance',
-            'Designing plugin UI/UX'
+            'Learning Figma Plugin API architecture',
+            'Creating intuitive component management system',
+            'Building efficient font handling mechanism',
+            'Optimizing plugin performance for large files'
         ],
         solutions: [
-            'Mastered Figma Plugin development',
-            'Identified common designer pain points',
-            'Built efficient and lightweight plugins',
-            'Created intuitive plugin interfaces'
+            'Mastered Figma Plugin API and best practices',
+            'Developed CompMagnet for seamless component workflows',
+            'Created Font Manager for streamlined typography',
+            'Implemented efficient algorithms for better performance'
         ],
         results: [
-            'Successfully published 2 Figma plugins',
-            'Streamlined design workflows',
-            'Demonstrated tool development skills',
-            'Enhanced designer productivity'
+            'Successfully published CompMagnet plugin',
+            'Successfully published Font Manager plugin',
+            'Both plugins live on Figma Community',
+            'Enhanced designer productivity and workflows'
         ]
     },
     {

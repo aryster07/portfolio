@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export const useScrollReveal = (dependencies: any[] = []) => {
+export const useScrollReveal = (dependencies: React.DependencyList = []) => {
     useEffect(() => {
         // Reset all reveal elements first (remove reveal-visible class)
         document.querySelectorAll('.reveal-visible').forEach((el) => {

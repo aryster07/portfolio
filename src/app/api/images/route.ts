@@ -1,8 +1,26 @@
 import { NextResponse } from 'next/server';
 import { getFolderImages, GALLERY_FOLDERS, CLOUDINARY_BASE_URL } from '@/lib/cloudinary';
 
+interface GallerySection {
+    title: string;
+    images: Array<{
+        id: number;
+        title: string;
+        description: string;
+        imageUrl: string;
+        thumbnailUrl?: string;
+        previewUrl?: string;
+        placeholderUrl?: string;
+        originalUrl: string;
+        publicId: string;
+        downloadUrl: string;
+        width: number;
+        height: number;
+    }>;
+}
+
 // Cache the gallery data for 1 hour
-let cachedData: any = null;
+let cachedData: GallerySection[] | null = null;
 let cacheTime: number = 0;
 const CACHE_DURATION = 60 * 60 * 1000; // 1 hour
 
@@ -12,7 +30,6 @@ export async function GET() {
         
         // Return cached data if still valid
         if (cachedData && (now - cacheTime) < CACHE_DURATION) {
-            console.log('⚡ Returning cached gallery data');
             return NextResponse.json(cachedData, {
                 headers: {
                     'Cache-Control': 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400',
@@ -20,8 +37,6 @@ export async function GET() {
                 },
             });
         }
-        
-        console.log('🔄 Fetching fresh gallery data...');
         
         // Fetch ALL folders in PARALLEL for maximum speed
         const folderPromises = GALLERY_FOLDERS.map(folder => getFolderImages(folder));
@@ -38,8 +53,6 @@ export async function GET() {
         cachedData = sections;
         cacheTime = now;
         
-        console.log(`✅ Cached ${sections.length} gallery sections`);
-        
         return NextResponse.json(sections, {
             headers: {
                 'Cache-Control': 'public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400',
@@ -47,7 +60,7 @@ export async function GET() {
             },
         });
     } catch (error) {
-        console.error('Error fetching images:', error);
+        // Return empty array on error instead of exposing error details
         // Return cached data even if expired on error
         if (cachedData) {
             return NextResponse.json(cachedData, {

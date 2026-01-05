@@ -10,10 +10,30 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 
 type Mode = 'designer' | 'creator';
 
+interface GalleryImage {
+  id: number;
+  title: string;
+  description: string;
+  imageUrl: string;
+  thumbnailUrl?: string;
+  previewUrl?: string;
+  placeholderUrl?: string;
+  originalUrl: string;
+  publicId: string;
+  downloadUrl: string;
+  width: number;
+  height: number;
+}
+
+interface PhotographySection {
+  title: string;
+  images: GalleryImage[];
+}
+
 export default function Portfolio() {
   const [mode, setMode] = useState<Mode>('designer');
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const [photographySections, setPhotographySections] = useState<{ title: string; images: any[] }[]>([]);
+  const [photographySections, setPhotographySections] = useState<PhotographySection[]>([]);
 
   useScrollReveal([mode]);
 
@@ -48,7 +68,7 @@ export default function Portfolio() {
           setPhotographySections(sections);
         }
       } catch (error) {
-        console.error('Error loading photography projects:', error);
+        // Silently handle error - photography sections will remain empty
       }
     };
     loadPhotographyProjects();

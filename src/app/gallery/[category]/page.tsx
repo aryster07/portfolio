@@ -19,8 +19,13 @@ interface GalleryImage {
     height: number;
 }
 
+interface GallerySection {
+    title: string;
+    images: GalleryImage[];
+}
+
 // Cache gallery data in memory - 1 hour
-const galleryCache = new Map<string, { data: any; timestamp: number }>();
+const galleryCache = new Map<string, { data: GallerySection[]; timestamp: number }>();
 const CACHE_DURATION = 60 * 60 * 1000; // 1 hour
 
 // Sequential Image Component - loads images one by one from top to bottom
@@ -109,8 +114,7 @@ export default function GalleryPage() {
                 const now = Date.now();
                 
                 if (cached && (now - cached.timestamp) < CACHE_DURATION) {
-                    console.log('Using cached gallery data');
-                    const section = cached.data.find((s: any) => s.title === category);
+                    const section = cached.data.find((s: GallerySection) => s.title === category);
                     if (section) {
                         setImages(section.images);
                     }
@@ -127,12 +131,12 @@ export default function GalleryPage() {
                 // Update cache
                 galleryCache.set('gallery-data', { data: sections, timestamp: now });
                 
-                const section = sections.find((s: any) => s.title === category);
+                const section = sections.find((s: GallerySection) => s.title === category);
                 if (section) {
                     setImages(section.images);
                 }
             } catch (error) {
-                console.error('Error loading images:', error);
+                // Silently handle error
             } finally {
                 setLoading(false);
             }

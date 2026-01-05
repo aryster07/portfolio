@@ -1,16 +1,23 @@
 import { v2 as cloudinary } from 'cloudinary';
 
+interface CloudinaryResource {
+    public_id: string;
+    secure_url: string;
+    width: number;
+    height: number;
+}
+
 // Cloudinary configuration
 cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME || 'dmko2zav7',
-    api_key: process.env.CLOUDINARY_API_KEY || '195252934725612',
-    api_secret: process.env.CLOUDINARY_API_SECRET || '2k2jRQyebgpcKsClcImkS8F9K0Y',
+    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+    api_key: process.env.CLOUDINARY_API_KEY,
+    api_secret: process.env.CLOUDINARY_API_SECRET,
     secure: true,
 });
 
 export { cloudinary };
 
-export const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME || 'dmko2zav7'}/image/upload`;
+export const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${process.env.CLOUDINARY_CLOUD_NAME}/image/upload`;
 
 // Gallery folder categories (sorted alphabetically for consistent order)
 export const GALLERY_FOLDERS = ['Astro', 'Bikes', 'Cars', 'Drones', 'Lambo', 'moon', 'Mountains', 'Nature', 'skies', 'Sunsets'];
@@ -48,11 +55,11 @@ export async function getFolderImages(folderName: string) {
         if (!result || result.resources.length === 0) return [];
 
         // Sort by public_id to maintain consistent order
-        const sortedResources = result.resources.sort((a: any, b: any) => 
+        const sortedResources = result.resources.sort((a: CloudinaryResource, b: CloudinaryResource) => 
             a.public_id.localeCompare(b.public_id)
         );
 
-        return sortedResources.map((resource: any, index: number) => {
+        return sortedResources.map((resource: CloudinaryResource, index: number) => {
             const aspectRatio = resource.width / resource.height;
             const publicId = resource.public_id;
 
@@ -76,8 +83,8 @@ export async function getFolderImages(folderName: string) {
                 isLandscape: aspectRatio >= 1,
             };
         });
-    } catch (error: any) {
-        console.error(`Error fetching images from ${folderName}:`, error);
+    } catch (error) {
+        // Silently fail and return empty array
         return [];
     }
 }
@@ -96,7 +103,7 @@ export async function getGallerySections() {
 
         return sections;
     } catch (error) {
-        console.error('Error fetching gallery sections:', error);
+        // Silently fail and return empty array
         return [];
     }
 }

@@ -124,8 +124,8 @@ export const caseStudies: CaseStudy[] = [
         tools: ['Figma', 'User Flow Mapping', 'Wireframing', 'Prototyping'],
         impact: ['Streamlined payment process', 'Enhanced user confidence', 'Modern financial UI'],
         images: {
-            hero: '/case-studies/financing-app-payment-flow/cover/cover.png.png',
-            cover: '/case-studies/financing-app-payment-flow/cover/cover.png.png',
+            hero: '/case-studies/financing-app-payment-flow/cover/cover.png',
+            cover: '/case-studies/financing-app-payment-flow/cover/cover.png',
             oldDesigns: [],
             newDesigns: [],
             wireframes: [

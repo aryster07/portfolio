@@ -29,6 +29,163 @@ export default function CaseStudyPage() {
         );
     }
 
+    // Special layout for Figma Plugins overview page
+    if (id === 'figma-plugins') {
+        return (
+            <div className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans selection:bg-blue-200 selection:text-blue-900">
+                {/* Navigation */}
+                <nav className="fixed top-0 left-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+                    <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+                        <Link href="/" className="flex items-center gap-2 text-slate-600 hover:text-blue-600 transition-colors group">
+                            <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+                            <span className="font-medium">Back to Portfolio</span>
+                        </Link>
+                        <div className="font-bold text-xl tracking-tight">7FRAMES.</div>
+                    </div>
+                </nav>
+
+                <main className="pt-32 pb-20 px-6">
+                    <article className="max-w-5xl mx-auto">
+                        {/* Header */}
+                        <header className="mb-16 text-center">
+                            <span className="inline-block px-4 py-1.5 rounded-full bg-purple-50 text-purple-600 text-xs font-bold uppercase tracking-widest mb-6">
+                                Figma Plugins
+                            </span>
+                            <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight text-slate-900">
+                                My Figma Plugins
+                            </h1>
+                            <p className="text-xl md:text-2xl text-slate-500 max-w-3xl mx-auto leading-relaxed">
+                                Two powerful productivity plugins published on Figma Community
+                            </p>
+                        </header>
+
+                        {/* Plugins Grid */}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-20">
+                            
+                            {/* CompMagnet Plugin */}
+                            <a 
+                                href="https://www.figma.com/community/plugin/1587789564837977428/compmagnet"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl hover:border-purple-300 transition-all duration-300"
+                            >
+                                <div className="relative aspect-video bg-gradient-to-br from-purple-50 to-blue-50 overflow-hidden">
+                                    <Image
+                                        src="/case-studies/figma-plugins/compmagnet.png"
+                                        alt="CompMagnet Plugin"
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
+                                        CompMagnet
+                                    </h3>
+                                    <p className="text-slate-600 mb-4">
+                                        Instantly organize components and variants in alphabetical 5-column grids. Auto-detects and arranges your design system.
+                                    </p>
+                                    <div className="flex items-center gap-2 text-purple-600 font-medium">
+                                        View Plugin <ExternalLink size={16} />
+                                    </div>
+                                </div>
+                            </a>
+
+                            {/* Font Manager Plugin */}
+                            <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl hover:border-purple-300 transition-all duration-300">
+                                <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden">
+                                    <Image
+                                        src="/case-studies/figma-plugins/font-manager.png"
+                                        alt="Font Manager Plugin"
+                                        fill
+                                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                                    />
+                                </div>
+                                <div className="p-6">
+                                    <h3 className="text-2xl font-bold mb-2 group-hover:text-purple-600 transition-colors">
+                                        Font Manager
+                                    </h3>
+                                    <p className="text-slate-600 mb-4">
+                                        Find and fix missing fonts instantly. Scans your entire design file and helps restore or replace unavailable fonts.
+                                    </p>
+                                    <div className="flex items-center gap-2 text-slate-400 font-medium">
+                                        Coming to Community Soon
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        {/* Overview Section */}
+                        <section className="mb-16 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 md:p-12 border border-purple-100">
+                            <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+                                <span className="w-8 h-1 bg-purple-600 rounded-full"></span>
+                                About These Plugins
+                            </h2>
+                            <p className="text-lg text-slate-700 leading-relaxed mb-6">
+                                {project.description}
+                            </p>
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <div className="bg-white rounded-xl p-6 border border-purple-100">
+                                    <div className="text-3xl font-bold text-purple-600 mb-2">2</div>
+                                    <div className="font-bold mb-1">Published Plugins</div>
+                                    <div className="text-sm text-slate-600">Live on Figma Community</div>
+                                </div>
+                                <div className="bg-white rounded-xl p-6 border border-purple-100">
+                                    <div className="text-3xl font-bold text-purple-600 mb-2">100%</div>
+                                    <div className="font-bold mb-1">Custom Built</div>
+                                    <div className="text-sm text-slate-600">From scratch with TypeScript</div>
+                                </div>
+                                <div className="bg-white rounded-xl p-6 border border-purple-100">
+                                    <div className="text-3xl font-bold text-purple-600 mb-2">⚡</div>
+                                    <div className="font-bold mb-1">Instant Performance</div>
+                                    <div className="text-sm text-slate-600">Optimized for large files</div>
+                                </div>
+                            </div>
+                        </section>
+
+                        {/* Technical Details */}
+                        <section className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                                    <span className="w-6 h-1 bg-blue-600 rounded-full"></span>
+                                    Tools & Technologies
+                                </h3>
+                                <div className="flex flex-wrap gap-2">
+                                    {project.tools.map((tool, i) => (
+                                        <span key={i} className="px-4 py-2 bg-slate-100 rounded-lg text-sm font-medium text-slate-700">
+                                            {tool}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                            <div>
+                                <h3 className="text-xl font-bold mb-4 flex items-center gap-3">
+                                    <span className="w-6 h-1 bg-green-600 rounded-full"></span>
+                                    Key Features
+                                </h3>
+                                <ul className="space-y-2 text-slate-700">
+                                    <li className="flex items-start gap-2">
+                                        <ChevronRight size={20} className="text-green-600 mt-0.5 flex-shrink-0" />
+                                        <span>Auto-detection and organization</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <ChevronRight size={20} className="text-green-600 mt-0.5 flex-shrink-0" />
+                                        <span>Font scanning and fixing</span>
+                                    </li>
+                                    <li className="flex items-start gap-2">
+                                        <ChevronRight size={20} className="text-green-600 mt-0.5 flex-shrink-0" />
+                                        <span>Instant performance optimization</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+
+                    </article>
+                </main>
+            </div>
+        );
+    }
+
     return (
         <div className="min-h-screen bg-[#FAFAFA] text-slate-900 font-sans selection:bg-blue-200 selection:text-blue-900">
 

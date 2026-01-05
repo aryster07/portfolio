@@ -331,267 +331,6 @@ export const caseStudies: CaseStudy[] = [
         ]
     },
     {
-        id: 'vscode-extensions',
-        title: 'Chrome Extensions',
-        subtitle: '2 Custom Chrome Extensions',
-        description: 'Developed two custom Chrome browser extensions to enhance user productivity and browsing experience.',
-        category: 'Browser Extension Development',
-        timeline: '2025-2026',
-        role: 'Developer & Designer',
-        tools: ['Chrome Extension API', 'JavaScript', 'HTML/CSS', 'Manifest V3'],
-        impact: ['Enhanced browsing productivity', 'Custom browser solutions', 'Published extensions'],
-        images: {
-            hero: '/case-studies/vscode-extensions/cover.png',
-            cover: '/case-studies/vscode-extensions/cover.png',
-            oldDesigns: [],
-            newDesigns: [],
-            wireframes: [],
-            userResearch: [],
-            prototypes: [],
-            finalScreens: []
-        },
-        stats: [
-            {
-                metric: '2',
-                label: 'Extensions',
-                description: 'Published Chrome extensions'
-            },
-            {
-                metric: '100%',
-                label: 'Custom Built',
-                description: 'Developed from scratch'
-            }
-        ],
-        challenges: [
-            'Understanding Chrome Extension API',
-            'Creating intuitive browser tools',
-            'Optimizing extension performance',
-            'Adapting to Manifest V3 requirements'
-        ],
-        solutions: [
-            'Mastered Chrome Extension development',
-            'Implemented efficient code architecture',
-            'Created seamless user experience',
-            'Focused on performance optimization'
-        ],
-        results: [
-            'Successfully published 2 Chrome extensions',
-            'Enhanced user browsing experience',
-            'Demonstrated full-stack capabilities',
-            'Gained extension development expertise'
-        ]
-    },
-    {
-        id: 'portfolio-redesign',
-        title: 'Portfolio Redesign',
-        subtitle: 'Personal Portfolio Website',
-        description: 'A complete redesign of my personal portfolio website featuring dual mode (Designer/Creator), modern animations, and optimized performance.',
-        category: 'Web Development & Design',
-        timeline: '2025-2026',
-        role: 'Full-Stack Designer & Developer',
-        tools: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Figma'],
-        impact: ['Modern dual-mode interface', 'Optimized performance', 'Type-safe codebase'],
-        images: {
-            hero: '/case-studies/portfolio-redesign/cover.png',
-            cover: '/case-studies/portfolio-redesign/cover.png',
-            oldDesigns: [],
-            newDesigns: [],
-            wireframes: [],
-            userResearch: [],
-            prototypes: [],
-            finalScreens: []
-        },
-        stats: [
-            {
-                metric: '2',
-                label: 'Modes',
-                description: 'Designer & Creator personas'
-            },
-            {
-                metric: '100%',
-                label: 'Type-Safe',
-                description: 'TypeScript throughout'
-            },
-            {
-                metric: 'A+',
-                label: 'Performance',
-                description: 'Optimized build & caching'
-            }
-        ],
-        challenges: [
-            'Creating seamless dual-mode experience',
-            'Implementing smooth animations and transitions',
-            'Optimizing performance and load times',
-            'Building responsive design system'
-        ],
-        solutions: [
-            'Developed toggle system with smooth transitions',
-            'Used Framer Motion for fluid animations',
-            'Implemented Next.js 16 with Turbopack',
-            'Created custom cursor and scroll effects'
-        ],
-        results: [
-            'Launched modern dual-persona portfolio',
-            'Achieved excellent performance scores',
-            'Zero TypeScript errors, production-ready',
-            'Showcased full-stack development skills'
-        ]
-    },
-    {
-        id: 'self-attendance-app',
-        title: 'Self Attendance App',
-        subtitle: 'Personal Attendance Tracking System',
-        description: 'A self-developed attendance management application designed to simplify and automate personal attendance tracking with an intuitive interface.',
-        category: 'Mobile/Web App Development',
-        timeline: '2025-2026',
-        role: 'Full-Stack Developer & Designer',
-        tools: ['React', 'TypeScript', 'Firebase', 'Figma'],
-        impact: ['Automated attendance tracking', 'User-friendly interface', 'Real-time updates'],
-        images: {
-            hero: '/case-studies/self-attendance-app/cover.png',
-            cover: '/case-studies/self-attendance-app/cover.png',
-            oldDesigns: [],
-            newDesigns: [],
-            wireframes: [],
-            userResearch: [],
-            prototypes: [],
-            finalScreens: []
-        },
-        stats: [
-            {
-                metric: '100%',
-                label: 'Automated',
-                description: 'Smart attendance tracking'
-            },
-            {
-                metric: 'Real-time',
-                label: 'Updates',
-                description: 'Instant synchronization'
-            }
-        ],
-        challenges: [
-            'Creating reliable attendance tracking logic',
-            'Designing intuitive data visualization',
-            'Implementing secure authentication',
-            'Building real-time sync functionality'
-        ],
-        solutions: [
-            'Developed robust tracking algorithm',
-            'Created clean dashboard with analytics',
-            'Integrated secure authentication system',
-            'Implemented Firebase real-time database'
-        ],
-        results: [
-            'Successfully deployed attendance app',
-            'Simplified personal attendance management',
-            'Achieved reliable tracking system',
-            'Demonstrated full-stack capabilities'
-        ]
-    },
-    {
-        id: 'figma-plugins',
-        title: 'Figma Plugins: CompMagnet & Font Manager',
-        subtitle: '2 Published Figma Community Plugins',
-        description: 'Developed and published two Figma plugins: CompMagnet for component management and Font Manager for efficient font handling. Both plugins are available on the Figma Community.',
-        category: 'Design Tools & Plugins',
-        timeline: '2025-2026',
-        role: 'Plugin Developer & Designer',
-        tools: ['Figma Plugin API', 'TypeScript', 'React', 'HTML/CSS'],
-        impact: ['Enhanced design workflow', 'Automated design tasks', 'Published on Figma Community'],
-        behanceUrl: 'https://www.figma.com/community/plugin/1587789564837977428/compmagnet',
-        images: {
-            hero: '/case-studies/figma-plugins/cover.png',
-            cover: '/case-studies/figma-plugins/cover.png',
-            oldDesigns: [],
-            newDesigns: [],
-            wireframes: [],
-            userResearch: [],
-            prototypes: [],
-            finalScreens: []
-        },
-        stats: [
-            {
-                metric: '2',
-                label: 'Plugins',
-                description: 'CompMagnet & Font Manager'
-            },
-            {
-                metric: 'Published',
-                label: 'Figma Community',
-                description: 'Available to all designers'
-            }
-        ],
-        challenges: [
-            'Learning Figma Plugin API architecture',
-            'Creating intuitive component management system',
-            'Building efficient font handling mechanism',
-            'Optimizing plugin performance for large files'
-        ],
-        solutions: [
-            'Mastered Figma Plugin API and best practices',
-            'Developed CompMagnet for seamless component workflows',
-            'Created Font Manager for streamlined typography',
-            'Implemented efficient algorithms for better performance'
-        ],
-        results: [
-            'Successfully published CompMagnet plugin',
-            'Successfully published Font Manager plugin',
-            'Both plugins live on Figma Community',
-            'Enhanced designer productivity and workflows'
-        ]
-    },
-    {
-        id: 'web-game',
-        title: 'Web Game',
-        subtitle: 'Interactive Web Game (In Development)',
-        description: 'Currently developing an interactive web-based game featuring engaging gameplay mechanics and modern web technologies.',
-        category: 'Game Development',
-        timeline: 'In Progress',
-        role: 'Game Developer & Designer',
-        tools: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'Game Design'],
-        impact: ['Interactive gameplay', 'Modern web tech', 'Creative coding'],
-        images: {
-            hero: '/case-studies/web-game/cover.png',
-            cover: '/case-studies/web-game/cover.png',
-            oldDesigns: [],
-            newDesigns: [],
-            wireframes: [],
-            userResearch: [],
-            prototypes: [],
-            finalScreens: []
-        },
-        stats: [
-            {
-                metric: 'WIP',
-                label: 'In Progress',
-                description: 'Active development'
-            },
-            {
-                metric: '100%',
-                label: 'Custom',
-                description: 'Built from scratch'
-            }
-        ],
-        challenges: [
-            'Implementing game physics and mechanics',
-            'Creating engaging gameplay experience',
-            'Optimizing browser performance',
-            'Designing game visuals and UI'
-        ],
-        solutions: [
-            'Learning game development principles',
-            'Using HTML5 Canvas for rendering',
-            'Implementing efficient game loop',
-            'Creating responsive game design'
-        ],
-        results: [
-            'Active development of web game',
-            'Exploring game development skills',
-            'Expanding creative coding abilities',
-            'Building interactive experiences'
-        ]
-    },
-    {
         id: 'gfm-expedition-redesign',
         title: 'GFM Expedition Redesign',
         subtitle: 'Web/App Redesign Project',
@@ -693,6 +432,280 @@ export const caseStudies: CaseStudy[] = [
             'Created engaging restaurant digital presence',
             'Delivered cohesive customer experience',
             'Established strong visual brand recognition'
+        ]
+    },
+    // ============================================
+    // COMING SOON PROJECTS (No cover images yet)
+    // ============================================
+    {
+        id: 'vscode-extensions',
+        title: 'Chrome Extensions',
+        subtitle: 'Coming Soon',
+        description: 'Two custom Chrome browser extensions currently in development to enhance user productivity and browsing experience. Case study coming soon.',
+        category: 'Browser Extension Development',
+        timeline: 'Coming Soon',
+        role: 'Developer & Designer',
+        tools: ['Chrome Extension API', 'JavaScript', 'HTML/CSS', 'Manifest V3'],
+        impact: ['Enhanced browsing productivity', 'Custom browser solutions', 'Published extensions'],
+        images: {
+            hero: '/case-studies/vscode-extensions/cover.png',
+            cover: '/case-studies/vscode-extensions/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: '2',
+                label: 'Extensions',
+                description: 'Chrome extensions built'
+            },
+            {
+                metric: '100%',
+                label: 'Custom Built',
+                description: 'Developed from scratch'
+            }
+        ],
+        challenges: [
+            'Understanding Chrome Extension API',
+            'Creating intuitive browser tools',
+            'Optimizing extension performance',
+            'Adapting to Manifest V3 requirements'
+        ],
+        solutions: [
+            'Mastered Chrome Extension development',
+            'Implemented efficient code architecture',
+            'Created seamless user experience',
+            'Focused on performance optimization'
+        ],
+        results: [
+            'Successfully built 2 Chrome extensions',
+            'Enhanced user browsing experience',
+            'Demonstrated full-stack capabilities',
+            'Gained extension development expertise'
+        ]
+    },
+    {
+        id: 'portfolio-redesign',
+        title: 'Portfolio Redesign',
+        subtitle: 'Coming Soon',
+        description: 'A complete redesign of my personal portfolio website featuring dual mode (Designer/Creator), modern animations, and optimized performance. Case study coming soon.',
+        category: 'Web Development & Design',
+        timeline: 'Coming Soon',
+        role: 'Full-Stack Designer & Developer',
+        tools: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Figma'],
+        impact: ['Modern dual-mode interface', 'Optimized performance', 'Type-safe codebase'],
+        images: {
+            hero: '/case-studies/portfolio-redesign/cover.png',
+            cover: '/case-studies/portfolio-redesign/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: '2',
+                label: 'Modes',
+                description: 'Designer & Creator personas'
+            },
+            {
+                metric: '100%',
+                label: 'Type-Safe',
+                description: 'TypeScript throughout'
+            },
+            {
+                metric: 'A+',
+                label: 'Performance',
+                description: 'Optimized build & caching'
+            }
+        ],
+        challenges: [
+            'Creating seamless dual-mode experience',
+            'Implementing smooth animations and transitions',
+            'Optimizing performance and load times',
+            'Building responsive design system'
+        ],
+        solutions: [
+            'Developed toggle system with smooth transitions',
+            'Used Framer Motion for fluid animations',
+            'Implemented Next.js 16 with Turbopack',
+            'Created custom cursor and scroll effects'
+        ],
+        results: [
+            'Launched modern dual-persona portfolio',
+            'Achieved excellent performance scores',
+            'Zero TypeScript errors, production-ready',
+            'Showcased full-stack development skills'
+        ]
+    },
+    {
+        id: 'self-attendance-app',
+        title: 'Self Attendance App',
+        subtitle: 'Coming Soon',
+        description: 'A self-developed attendance management application designed to simplify and automate personal attendance tracking. Case study coming soon.',
+        category: 'Mobile/Web App Development',
+        timeline: 'Coming Soon',
+        role: 'Full-Stack Developer & Designer',
+        tools: ['React', 'TypeScript', 'Firebase', 'Figma'],
+        impact: ['Automated attendance tracking', 'User-friendly interface', 'Real-time updates'],
+        images: {
+            hero: '/case-studies/self-attendance-app/cover.png',
+            cover: '/case-studies/self-attendance-app/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: '100%',
+                label: 'Automated',
+                description: 'Smart attendance tracking'
+            },
+            {
+                metric: 'Real-time',
+                label: 'Updates',
+                description: 'Instant synchronization'
+            }
+        ],
+        challenges: [
+            'Creating reliable attendance tracking logic',
+            'Designing intuitive data visualization',
+            'Implementing secure authentication',
+            'Building real-time sync functionality'
+        ],
+        solutions: [
+            'Developed robust tracking algorithm',
+            'Created clean dashboard with analytics',
+            'Integrated secure authentication system',
+            'Implemented Firebase real-time database'
+        ],
+        results: [
+            'Successfully deployed attendance app',
+            'Simplified personal attendance management',
+            'Achieved reliable tracking system',
+            'Demonstrated full-stack capabilities'
+        ]
+    },
+    {
+        id: 'figma-plugins',
+        title: 'Figma Plugins',
+        subtitle: 'Figma Plugin Development',
+        description: 'Two powerful Figma plugins published on Figma Community: CompMagnet for instant component organization and Font Manager for finding & fixing missing fonts.',
+        category: 'Figma Plugins',
+        timeline: 'Completed',
+        role: 'Plugin Developer & Designer',
+        tools: ['Figma Plugin API', 'TypeScript', 'React', 'HTML/CSS'],
+        impact: ['2 Published plugins', 'Workflow automation', 'Design efficiency'],
+        images: {
+            hero: '/case-studies/figma-plugins/cover.png',
+            cover: '/case-studies/figma-plugins/cover.png',
+            oldDesigns: [],
+            newDesigns: [
+                '/case-studies/figma-plugins/compmagnet.png',
+                '/case-studies/figma-plugins/font-manager.png'
+            ],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: [
+                '/case-studies/figma-plugins/compmagnet.png',
+                '/case-studies/figma-plugins/font-manager.png'
+            ]
+        },
+        stats: [
+            {
+                metric: '2',
+                label: 'Plugins',
+                description: 'CompMagnet & Font Manager'
+            },
+            {
+                metric: 'Published',
+                label: 'Figma Community',
+                description: 'Available to designers'
+            },
+            {
+                metric: '100%',
+                label: 'Custom Built',
+                description: 'Developed from scratch'
+            }
+        ],
+        challenges: [
+            'Auto-detecting components and variants efficiently (CompMagnet)',
+            'Organizing components in alphabetical 5-column grid',
+            'Finding and fixing missing fonts instantly (Font Manager)',
+            'Optimizing plugin performance for large design files'
+        ],
+        solutions: [
+            'Built smart component detection and organization algorithm',
+            'Implemented variant preservation with grid layout system',
+            'Created comprehensive font scanning and detection system',
+            'Optimized both plugins for instant performance'
+        ],
+        results: [
+            'CompMagnet: Instant component organization published',
+            'Font Manager: Find & fix missing fonts published',
+            'Both plugins live on Figma Community',
+            'Enhanced workflows for designers worldwide'
+        ]
+    },
+    {
+        id: 'web-game',
+        title: 'Web Game',
+        subtitle: 'Coming Soon',
+        description: 'Currently developing an interactive web-based game featuring engaging gameplay mechanics and modern web technologies.',
+        category: 'Game Development',
+        timeline: 'Coming Soon',
+        role: 'Game Developer & Designer',
+        tools: ['JavaScript', 'HTML5 Canvas', 'CSS3', 'Game Design'],
+        impact: ['Interactive gameplay', 'Modern web tech', 'Creative coding'],
+        images: {
+            hero: '/case-studies/web-game/cover.png',
+            cover: '/case-studies/web-game/cover.png',
+            oldDesigns: [],
+            newDesigns: [],
+            wireframes: [],
+            userResearch: [],
+            prototypes: [],
+            finalScreens: []
+        },
+        stats: [
+            {
+                metric: 'WIP',
+                label: 'In Progress',
+                description: 'Active development'
+            },
+            {
+                metric: '100%',
+                label: 'Custom',
+                description: 'Built from scratch'
+            }
+        ],
+        challenges: [
+            'Implementing game physics and mechanics',
+            'Creating engaging gameplay experience',
+            'Optimizing browser performance',
+            'Designing game visuals and UI'
+        ],
+        solutions: [
+            'Learning game development principles',
+            'Using HTML5 Canvas for rendering',
+            'Implementing efficient game loop',
+            'Creating responsive game design'
+        ],
+        results: [
+            'Active development of web game',
+            'Exploring game development skills',
+            'Expanding creative coding abilities',
+            'Building interactive experiences'
         ]
     }
 ];

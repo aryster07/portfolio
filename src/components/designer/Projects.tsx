@@ -1,5 +1,5 @@
 "use client";
-import { Layers } from 'lucide-react';
+import { Layers, Clock } from 'lucide-react';
 import { ProjectCard } from '@/components/ui/ProjectCard';
 import { Project } from '@/data/portfolio';
 
@@ -8,6 +8,10 @@ interface DesignerProjectsProps {
 }
 
 export function DesignerProjects({ projects }: DesignerProjectsProps) {
+    // Separate regular projects from coming soon projects
+    const regularProjects = projects.filter(p => p.description !== 'Coming Soon');
+    const comingSoonProjects = projects.filter(p => p.description === 'Coming Soon');
+
     return (
         <section id="work" className="py-32 px-6 md:px-20">
             <div className="max-w-[1400px] mx-auto">
@@ -31,7 +35,7 @@ export function DesignerProjects({ projects }: DesignerProjectsProps) {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    {projects.map((project, index) => (
+                    {regularProjects.map((project, index) => (
                         <ProjectCard
                             key={project.id}
                             id={project.id}
@@ -45,6 +49,39 @@ export function DesignerProjects({ projects }: DesignerProjectsProps) {
                         />
                     ))}
                 </div>
+
+                {/* Coming Soon Section */}
+                {comingSoonProjects.length > 0 && (
+                    <div className="mt-24">
+                        <div className="flex items-center gap-3 mb-10">
+                            <Clock size={24} className="text-slate-400" />
+                            <h3 className="text-2xl font-bold text-slate-400">Coming Soon</h3>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            {comingSoonProjects.map((project, index) => (
+                                <div
+                                    key={project.id}
+                                    className="relative overflow-hidden rounded-xl bg-slate-100 aspect-video opacity-60 cursor-not-allowed"
+                                >
+                                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-slate-200/80">
+                                        <Clock size={32} className="text-slate-400 mb-2" />
+                                        <span className="text-sm font-bold text-slate-500 uppercase tracking-wider">Coming Soon</span>
+                                    </div>
+                                    <div className="absolute bottom-0 left-0 p-4 w-full">
+                                        <div className="flex flex-wrap gap-1 mb-2">
+                                            {project.tools?.slice(0, 2).map((tool, i) => (
+                                                <span key={i} className="text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-slate-300 text-slate-600">
+                                                    {tool}
+                                                </span>
+                                            ))}
+                                        </div>
+                                        <h4 className="text-lg font-bold text-slate-700">{project.title}</h4>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
             </div>
         </section>
     );

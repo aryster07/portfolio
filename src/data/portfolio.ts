@@ -599,33 +599,35 @@ export const caseStudies: CaseStudy[] = [
         id: 'figma-plugins',
         title: 'Figma Plugins',
         subtitle: 'Figma Plugin Development',
-        description: 'Two powerful Figma plugins published on Figma Community: CompMagnet for instant component organization and Font Manager for finding & fixing missing fonts.',
+        description: 'Three powerful Figma plugins published on Figma Community: CompMagnet for instant component organization, Font Manager for finding & fixing missing fonts, and Comment Deck for filtering, sorting, and exporting Figma comments instantly.',
         category: 'Figma Plugins',
         timeline: 'Completed',
         role: 'Plugin Developer & Designer',
         tools: ['Figma Plugin API', 'TypeScript', 'React', 'HTML/CSS'],
-        impact: ['2 Published plugins', 'Workflow automation', 'Design efficiency'],
+        impact: ['3 Published plugins', 'Workflow automation', 'Design efficiency'],
         images: {
             hero: '/case-studies/figma-plugins/cover.png',
             cover: '/case-studies/figma-plugins/cover.png',
             oldDesigns: [],
             newDesigns: [
                 '/case-studies/figma-plugins/compmagnet.png',
-                '/case-studies/figma-plugins/font-manager.png'
+                '/case-studies/figma-plugins/font-manager.png',
+                '/case-studies/figma-plugins/cmt deck thumb.png'
             ],
             wireframes: [],
             userResearch: [],
             prototypes: [],
             finalScreens: [
                 '/case-studies/figma-plugins/compmagnet.png',
-                '/case-studies/figma-plugins/font-manager.png'
+                '/case-studies/figma-plugins/font-manager.png',
+                '/case-studies/figma-plugins/cmt deck thumb.png'
             ]
         },
         stats: [
             {
-                metric: '2',
+                metric: '3',
                 label: 'Plugins',
-                description: 'CompMagnet & Font Manager'
+                description: 'CompMagnet, Font Manager & Comment Deck'
             },
             {
                 metric: 'Published',
@@ -642,18 +644,21 @@ export const caseStudies: CaseStudy[] = [
             'Auto-detecting components and variants efficiently (CompMagnet)',
             'Organizing components in alphabetical 5-column grid',
             'Finding and fixing missing fonts instantly (Font Manager)',
+            'Managing and organizing feedback from multiple collaborators (Comment Deck)',
             'Optimizing plugin performance for large design files'
         ],
         solutions: [
             'Built smart component detection and organization algorithm',
             'Implemented variant preservation with grid layout system',
             'Created comprehensive font scanning and detection system',
-            'Optimized both plugins for instant performance'
+            'Developed comment aggregation with filter, sort, and export features',
+            'Optimized all plugins for instant performance'
         ],
         results: [
             'CompMagnet: Instant component organization published',
             'Font Manager: Find & fix missing fonts published',
-            'Both plugins live on Figma Community',
+            'Comment Deck: Filter, sort & export comments published',
+            'All three plugins live on Figma Community',
             'Enhanced workflows for designers worldwide'
         ]
     },

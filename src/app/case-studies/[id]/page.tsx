@@ -1,15 +1,14 @@
 "use client";
 
-import React, { useEffect, useRef } from 'react';
-import { useParams, useRouter } from 'next/navigation';
+import React, { useEffect } from 'react';
+import { useParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowLeft, ArrowRight, Calendar, User, PenTool, ExternalLink, ChevronRight } from 'lucide-react';
-import { getCaseStudyById, CaseStudy } from '@/data/portfolio';
+import { getCaseStudyById } from '@/data/portfolio';
 
 export default function CaseStudyPage() {
     const params = useParams();
-    const router = useRouter();
     const { id } = params;
 
     useEffect(() => {
@@ -69,7 +68,7 @@ export default function CaseStudyPage() {
                                 rel="noopener noreferrer"
                                 className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl hover:border-purple-300 transition-all duration-300"
                             >
-                                <div className="relative aspect-video bg-gradient-to-br from-purple-50 to-blue-50 overflow-hidden">
+                                <div className="relative aspect-video bg-linear-to-br from-purple-50 to-blue-50 overflow-hidden">
                                     <Image
                                         src="/case-studies/figma-plugins/compmagnet.png"
                                         alt="CompMagnet Plugin"
@@ -92,7 +91,7 @@ export default function CaseStudyPage() {
 
                             {/* Font Manager Plugin */}
                             <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200 hover:shadow-2xl hover:border-purple-300 transition-all duration-300">
-                                <div className="relative aspect-video bg-gradient-to-br from-blue-50 to-purple-50 overflow-hidden">
+                                <div className="relative aspect-video bg-linear-to-br from-blue-50 to-purple-50 overflow-hidden">
                                     <Image
                                         src="/case-studies/figma-plugins/font-manager.png"
                                         alt="Font Manager Plugin"
@@ -116,7 +115,7 @@ export default function CaseStudyPage() {
                         </div>
 
                         {/* Overview Section */}
-                        <section className="mb-16 bg-gradient-to-br from-purple-50 to-blue-50 rounded-2xl p-8 md:p-12 border border-purple-100">
+                        <section className="mb-16 bg-linear-to-br from-purple-50 to-blue-50 rounded-2xl p-8 md:p-12 border border-purple-100">
                             <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
                                 <span className="w-8 h-1 bg-purple-600 rounded-full"></span>
                                 About These Plugins
@@ -165,15 +164,15 @@ export default function CaseStudyPage() {
                                 </h3>
                                 <ul className="space-y-2 text-slate-700">
                                     <li className="flex items-start gap-2">
-                                        <ChevronRight size={20} className="text-green-600 mt-0.5 flex-shrink-0" />
+                                        <ChevronRight size={20} className="text-green-600 mt-0.5 shrink-0" />
                                         <span>Auto-detection and organization</span>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <ChevronRight size={20} className="text-green-600 mt-0.5 flex-shrink-0" />
+                                        <ChevronRight size={20} className="text-green-600 mt-0.5 shrink-0" />
                                         <span>Font scanning and fixing</span>
                                     </li>
                                     <li className="flex items-start gap-2">
-                                        <ChevronRight size={20} className="text-green-600 mt-0.5 flex-shrink-0" />
+                                        <ChevronRight size={20} className="text-green-600 mt-0.5 shrink-0" />
                                         <span>Instant performance optimization</span>
                                     </li>
                                 </ul>
@@ -279,7 +278,7 @@ export default function CaseStudyPage() {
                                 <ul className="space-y-4">
                                     {project.challenges.map((challenge, i) => (
                                         <li key={i} className="flex items-start gap-4 bg-red-50/50 p-6 rounded-xl border border-red-100">
-                                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm mt-0.5">{i + 1}</span>
+                                            <span className="shrink-0 w-6 h-6 rounded-full bg-red-100 text-red-600 flex items-center justify-center font-bold text-sm mt-0.5">{i + 1}</span>
                                             <p className="text-slate-700">{challenge}</p>
                                         </li>
                                     ))}
@@ -295,7 +294,7 @@ export default function CaseStudyPage() {
                                 <ul className="space-y-4">
                                     {project.solutions.map((solution, i) => (
                                         <li key={i} className="flex items-start gap-4 bg-green-50/50 p-6 rounded-xl border border-green-100">
-                                            <span className="flex-shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-sm mt-0.5">{i + 1}</span>
+                                            <span className="shrink-0 w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center font-bold text-sm mt-0.5">{i + 1}</span>
                                             <p className="text-slate-700">{solution}</p>
                                         </li>
                                     ))}
@@ -308,7 +307,7 @@ export default function CaseStudyPage() {
                                     <h2 className="text-2xl font-bold mb-8">Wireframes & Process</h2>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                         {project.images.wireframes.map((img, i) => (
-                                            <div key={i} className="relative aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
+                                            <div key={i} className="relative aspect-4/3 bg-slate-100 rounded-xl overflow-hidden border border-slate-200">
                                                 <Image src={img} alt={`Wireframe ${i + 1}`} fill className="object-cover hover:scale-105 transition-transform duration-500" />
                                             </div>
                                         ))}

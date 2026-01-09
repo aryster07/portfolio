@@ -15,13 +15,13 @@ export function CreatorFooter() {
                     </p>
                 </div>
                 <div className="flex gap-4">
-                    <a href="https://www.instagram.com/7Frames_Aryan/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full interactive transition-all duration-300 hover:-translate-y-1 bg-neutral-900 text-gray-400 hover:text-purple-500 hover:bg-white/10">
+                    <a href="https://www.instagram.com/7Frames_Aryan/" target="_blank" rel="noopener noreferrer" aria-label="Visit Instagram" className="p-3 rounded-full interactive transition-all duration-300 hover:-translate-y-1 bg-neutral-900 text-gray-400 hover:text-purple-500 hover:bg-white/10">
                         <Instagram size={20} />
                     </a>
-                    <a href="https://www.linkedin.com/in/aryanrana007/" target="_blank" rel="noopener noreferrer" className="p-3 rounded-full interactive transition-all duration-300 hover:-translate-y-1 bg-neutral-900 text-gray-400 hover:text-purple-500 hover:bg-white/10">
+                    <a href="https://www.linkedin.com/in/7framesaryan/" target="_blank" rel="noopener noreferrer" aria-label="Visit LinkedIn" className="p-3 rounded-full interactive transition-all duration-300 hover:-translate-y-1 bg-neutral-900 text-gray-400 hover:text-purple-500 hover:bg-white/10">
                         <Linkedin size={20} />
                     </a>
-                    <a href="mailto:aryanrana762@gmail.com" className="p-3 rounded-full interactive transition-all duration-300 hover:-translate-y-1 bg-neutral-900 text-gray-400 hover:text-purple-500 hover:bg-white/10">
+                    <a href="mailto:aryanrana762@gmail.com" aria-label="Send Email" className="p-3 rounded-full interactive transition-all duration-300 hover:-translate-y-1 bg-neutral-900 text-gray-400 hover:text-purple-500 hover:bg-white/10">
                         <Mail size={20} />
                     </a>
                 </div>

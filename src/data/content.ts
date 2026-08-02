@@ -88,23 +88,7 @@ export type WorkItem = WorkItemBase &
   )
 
 export const work: WorkItem[] = [
-  // --- Case studies & design ------------------------------------------------
-  {
-    id: 'amizone-redesign',
-    name: 'AMIZONE Mobile Redesign',
-    meta: 'UX Research / Mobile App',
-    category: 'design',
-    cover: '/work/amizone-redesign/cover/cover.png',
-    caseStudyId: 'amizone-redesign',
-  },
-  {
-    id: 'financing-app-payment-flow',
-    name: 'Financing App Payment Flow',
-    meta: 'UX Research / App Design',
-    category: 'design',
-    cover: '/work/financing-app-payment-flow/cover/cover.png',
-    caseStudyId: 'financing-app-payment-flow',
-  },
+  // --- Featured work --------------------------------------------------------
   {
     id: 'osmfx-mods',
     name: 'OsmFX Mods',
@@ -120,38 +104,6 @@ export const work: WorkItem[] = [
     category: 'design',
     cover: '/work/grozify-app/cover.jpg',
     href: 'https://www.behance.net/gallery/239127575/Grozify-app-Your-best-grocery-app',
-  },
-  {
-    id: 'locked-in',
-    name: 'Locked-in',
-    meta: 'UI/UX Design',
-    category: 'design',
-    cover: '/work/locked-in/cover.png',
-    href: 'https://www.behance.net/gallery/235841675/Locked-in',
-  },
-  {
-    id: 'anonymous-confession-app',
-    name: 'Anonymous Confession App',
-    meta: 'UX Design / Mobile App',
-    category: 'design',
-    cover: '/work/anonymous-confession-app/cover.png',
-    href: 'https://www.behance.net/gallery/235779281/Anonymous-Confession-App',
-  },
-  {
-    id: 'gfm-expedition-redesign',
-    name: 'GFM Expedition Redesign',
-    meta: 'Web Design / Redesign',
-    category: 'design',
-    cover: '/work/gfm-expedition-redesign/cover.png',
-    href: 'https://www.behance.net/gallery/235658919/GFM-Expedition-Redesign',
-  },
-  {
-    id: 'lynnettes-kitchen',
-    name: 'Lynnettes Kitchen',
-    meta: 'Branding / Web Design',
-    category: 'design',
-    cover: '/work/lynnettes-kitchen/cover.png',
-    href: 'https://www.behance.net/gallery/235655707/Lynnettes-Kitchen',
   },
 
   // --- Figma plugins --------------------------------------------------------
@@ -194,6 +146,56 @@ export const work: WorkItem[] = [
     category: 'plugins',
     vector: 'comment-deck',
     // TODO(aryan): Figma Community URL needed.
+  },
+
+  // --- Case studies & design ------------------------------------------------
+  {
+    id: 'amizone-redesign',
+    name: 'AMIZONE Mobile Redesign',
+    meta: 'UX Research / Mobile App',
+    category: 'design',
+    cover: '/work/amizone-redesign/cover/cover.png',
+    caseStudyId: 'amizone-redesign',
+  },
+  {
+    id: 'financing-app-payment-flow',
+    name: 'Financing App Payment Flow',
+    meta: 'UX Research / App Design',
+    category: 'design',
+    cover: '/work/financing-app-payment-flow/cover/cover.png',
+    caseStudyId: 'financing-app-payment-flow',
+  },
+  {
+    id: 'locked-in',
+    name: 'Locked-in',
+    meta: 'UI/UX Design',
+    category: 'design',
+    cover: '/work/locked-in/cover.png',
+    href: 'https://www.behance.net/gallery/235841675/Locked-in',
+  },
+  {
+    id: 'anonymous-confession-app',
+    name: 'Anonymous Confession App',
+    meta: 'UX Design / Mobile App',
+    category: 'design',
+    cover: '/work/anonymous-confession-app/cover.png',
+    href: 'https://www.behance.net/gallery/235779281/Anonymous-Confession-App',
+  },
+  {
+    id: 'gfm-expedition-redesign',
+    name: 'GFM Expedition Redesign',
+    meta: 'Web Design / Redesign',
+    category: 'design',
+    cover: '/work/gfm-expedition-redesign/cover.png',
+    href: 'https://www.behance.net/gallery/235658919/GFM-Expedition-Redesign',
+  },
+  {
+    id: 'lynnettes-kitchen',
+    name: 'Lynnettes Kitchen',
+    meta: 'Branding / Web Design',
+    category: 'design',
+    cover: '/work/lynnettes-kitchen/cover.png',
+    href: 'https://www.behance.net/gallery/235655707/Lynnettes-Kitchen',
   },
 
   // --- Apps -----------------------------------------------------------------

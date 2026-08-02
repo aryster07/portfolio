@@ -21,7 +21,7 @@ function PlayBadge() {
 /** Latest uploads. Populated from the channel feed at build time — see data/videos.ts. */
 export function VideosSection() {
   return (
-    <section id="videos" className="bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10 md:py-28">
+    <section id="videos" className="bg-[#0C0C0C] px-4 py-20 sm:px-8 md:py-28 lg:px-12 xl:px-16">
       <SectionHeading className="mb-10 sm:mb-14">On YouTube</SectionHeading>
 
       <div className="mx-auto grid max-w-[1200px] grid-cols-2 gap-x-3 gap-y-8 sm:gap-x-6 lg:grid-cols-3 lg:gap-x-8">
@@ -62,8 +62,8 @@ export function VideosSection() {
           href={channelUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-body inline-flex items-center gap-2.5 rounded-full border-2 border-[#D7E2EA]/30
-                     px-7 py-3.5 text-[12px] font-bold tracking-widest text-[#D7E2EA]/80 uppercase
+          className="font-body inline-flex items-center gap-2 rounded-full border-2 border-[#D7E2EA]/30
+                     px-7 py-3 text-[12px] font-bold tracking-widest text-[#D7E2EA]/80 uppercase
                      transition-colors duration-300 hover:border-[#D7E2EA] hover:text-[#D7E2EA]"
         >
           Explore Channel

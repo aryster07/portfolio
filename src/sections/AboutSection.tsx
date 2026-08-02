@@ -16,7 +16,7 @@ export function AboutSection() {
   return (
     <section
       id="about"
-      className="relative overflow-clip border-b-[12px] border-black bg-white px-6 pt-16 pb-28 sm:px-12 sm:pb-32 lg:px-[188px]"
+      className="relative overflow-clip bg-white px-4 pt-16 pb-28 sm:px-8 sm:pb-32 lg:px-12 xl:px-16"
     >
       <div className="mx-auto flex max-w-[900px] flex-col items-center gap-8 text-center">
         <SectionHeading tone="dark">{about.title}</SectionHeading>
@@ -32,7 +32,7 @@ export function AboutSection() {
 
         {/* Location, called out rather than buried in the paragraph. */}
         <FadeIn delay={0.24} y={20}>
-          <p className="font-body inline-flex items-center gap-3 rounded-full border border-black/15 px-5 py-2.5 text-[15px] font-medium text-black">
+          <p className="font-body inline-flex items-center gap-3 rounded-full border border-black/15 px-5 py-3 text-[15px] font-medium text-black">
             <svg width="18" height="18" viewBox="0 0 24 24" {...icon}>
               <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
               <circle cx="12" cy="10" r="3" />
@@ -49,7 +49,7 @@ export function AboutSection() {
       </div>
 
       {/* Only the top sliver of the disc shows — a notch, not a bubble. */}
-      <CircleBleed edge="bottom" size={234} reveal={0.28} />
+      <CircleBleed edge="bottom" size={232} reveal={0.5} />
     </section>
   )
 }

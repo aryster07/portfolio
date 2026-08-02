@@ -35,8 +35,8 @@ export default function Home() {
       <HeroSection />
       <MarqueeSection />
       <AboutSection />
-      <WorkSection />
       <SkillsSection />
+      <WorkSection />
       <BlogSection />
       <VideosSection />
       <ContactSection />

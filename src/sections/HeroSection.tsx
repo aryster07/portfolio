@@ -24,7 +24,7 @@ export function HeroSection() {
     <section id="home" className="relative flex h-svh min-h-[640px] flex-col bg-[#0C0C0C]">
       <BubbleMenu />
 
-      <div className="flex flex-1 flex-col items-center justify-center gap-10 px-6 pt-28 pb-10 md:px-10 lg:flex-row lg:items-center lg:justify-between lg:gap-[4vw] lg:px-[84px] lg:pt-24">
+      <div className="flex flex-1 flex-col items-center justify-center gap-10 px-4 pt-28 pb-10 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:px-12 lg:pt-24 xl:gap-16 xl:px-16">
         {/* --- Headline ---------------------------------------------------- */}
         <div className="flex flex-col justify-center gap-2 uppercase">
           <FadeIn delay={0.15} y={40} trigger="mount" play={playHeroEntrance}>
@@ -51,7 +51,7 @@ export function HeroSection() {
         </div>
 
         {/* --- U / X letterforms + portrait -------------------------------- */}
-        <div className="flex shrink-0 flex-col items-center justify-center gap-[59px]">
+        <div className="flex shrink-0 flex-col items-center justify-center gap-16">
           <div
             ref={letterformRef}
             className="relative grid place-items-center"

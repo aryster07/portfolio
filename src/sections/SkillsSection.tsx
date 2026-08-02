@@ -17,55 +17,29 @@ function Sparkle({ className }: { className: string }) {
 }
 
 /**
- * "Core Design Skills" — Figma node 6:353. Monospace type, outlined cards in a
- * 4 + 3 layout with the second row inset so it reads as a staggered block.
+ * "Core Design Skills" — Figma node 6:353.
+ *
+ * Centred heading with no eyebrow and no description, matching About Me and
+ * From The Blog. The cards then run in a single horizontal band beneath it
+ * rather than sitting in a column beside an intro.
  */
 export function SkillsSection() {
-  const rowOne = skills.slice(0, 4)
-  const rowTwo = skills.slice(4)
-
   return (
-    <section id="skills" className="bg-[#0C0C0C] px-6 py-24 sm:px-12 lg:px-24 lg:py-[120px]">
-      <div className="mx-auto flex max-w-[1600px] flex-col gap-16 lg:flex-row lg:items-center lg:gap-20">
-        {/* --- Intro column ------------------------------------------------ */}
-        <div className="lg:w-[720px] lg:shrink-0">
-          <FadeIn delay={0} y={24}>
-            <p className="font-mono text-[13px] font-bold tracking-[0.2em] text-[#D7E2EA] uppercase">
-              // {skillsIntro.eyebrow}
-            </p>
-          </FadeIn>
-          <SectionHeading align="left" className="mt-6">
-            {skillsIntro.title}
-          </SectionHeading>
-          <FadeIn delay={0.2} y={24}>
-            <p className="font-body mt-7 max-w-[560px] text-[15px] leading-[1.75] text-[#D7E2EA]/80">
-              {skillsIntro.description}
-            </p>
-          </FadeIn>
-        </div>
+    <section
+      id="skills"
+      className="bg-[#0C0C0C] px-4 py-24 sm:px-8 lg:px-12 lg:py-[120px] xl:px-16"
+    >
+      <SectionHeading className="mb-12 sm:mb-16">{skillsIntro.title}</SectionHeading>
 
-        {/* --- Card grid ---------------------------------------------------- */}
-        <div className="relative flex flex-1 flex-col gap-6">
-          <Sparkle className="-top-3 left-[-10px] size-4" />
-          <Sparkle className="top-[-8px] right-1/4 size-3" />
+      <div className="relative mx-auto max-w-[1400px]">
+        <Sparkle className="-top-4 -left-1 size-4" />
+        <Sparkle className="-top-2 right-[18%] size-3" />
 
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4">
-            {rowOne.map((skill, i) => (
-              <SkillCard key={skill.name} name={skill.name} icon={skill.icon} delay={i * 0.08} />
-            ))}
-          </div>
-
-          {/* Row two is inset by half a column so the block staggers. */}
-          <div className="grid grid-cols-2 gap-6 sm:grid-cols-4 sm:px-[12.5%]">
-            {rowTwo.map((skill, i) => (
-              <SkillCard
-                key={skill.name}
-                name={skill.name}
-                icon={skill.icon}
-                delay={0.32 + i * 0.08}
-              />
-            ))}
-          </div>
+        {/* Two across on mobile, then the full band once there's room for it. */}
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-4 lg:grid-cols-7">
+          {skills.map((skill, i) => (
+            <SkillCard key={skill.name} name={skill.name} icon={skill.icon} delay={i * 0.07} />
+          ))}
         </div>
       </div>
     </section>
@@ -74,16 +48,17 @@ export function SkillsSection() {
 
 function SkillCard({ name, icon, delay }: { name: string; icon: SkillIcon; delay: number }) {
   return (
-    <FadeIn delay={delay} y={28}>
+    <FadeIn delay={delay} y={28} className="h-full">
       <div
-        className="group flex h-[160px] flex-col items-center justify-center gap-4 rounded-[20px]
-                   border border-[#D7E2EA]/40 px-3 transition-colors duration-500
-                   hover:border-[#D7E2EA]"
+        className="group flex h-[130px] flex-col items-center justify-center gap-3 rounded-[18px]
+                   border border-[#D7E2EA]/40 bg-[#121212] px-3 transition-colors duration-500
+                   hover:border-[#D7E2EA] hover:bg-[#16191B] sm:h-[150px] sm:gap-4 sm:rounded-[20px]
+                   sm:px-4"
       >
-        <span className="size-12 text-[#D7E2EA] transition-transform duration-500 group-hover:scale-110">
+        <span className="size-9 text-[#D7E2EA] transition-transform duration-500 group-hover:scale-110 sm:size-11">
           <SkillVector name={icon} />
         </span>
-        <p className="font-mono text-center text-[13px] leading-[1.3] font-medium text-[#D7E2EA] uppercase">
+        <p className="font-mono text-center text-[10px] leading-[1.3] font-medium text-[#D7E2EA] uppercase sm:text-[12px]">
           {name}
         </p>
       </div>

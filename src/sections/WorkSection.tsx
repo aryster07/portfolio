@@ -29,7 +29,7 @@ function ArrowBadge() {
 function Card({ item }: { item: WorkItem }) {
   const hasDestination = Boolean(item.caseStudyId || item.href)
   const caption = (
-    <div className="mt-2 flex items-start justify-between gap-2 px-0.5 sm:mt-3.5 sm:gap-3">
+    <div className="mt-2 flex items-start justify-between gap-2 px-1 sm:mt-4 sm:gap-3">
       <div className="min-w-0">
         <h3 className="truncate text-[11px] font-medium text-[#D7E2EA] uppercase transition-colors duration-300 group-hover:text-white sm:text-[14px]">
           {item.name}
@@ -119,11 +119,12 @@ function Card({ item }: { item: WorkItem }) {
 }
 
 /**
- * Two-column layout: a sticky rail carrying the heading, category list and
- * count, with the grid beside it. Filters that used to sit above the grid now
- * live in the rail, which cuts a lot of vertical height out of the section.
+ * Centred heading, then a two-column body: a sticky panel of category
+ * selectors on the left and the scrolling grid on the right. The panel gets
+ * its own surface so it reads as a fixed control rail rather than as the first
+ * column of the grid.
  */
-const INITIAL_VISIBLE = 6
+const INITIAL_VISIBLE = 8
 
 export function WorkSection() {
   const [filter, setFilter] = useState<Filter>('all')
@@ -143,18 +144,32 @@ export function WorkSection() {
   ]
 
   return (
-    <section id="work" className="bg-[#0C0C0C] px-5 py-20 sm:px-8 md:px-10 md:py-28">
-      <div className="mx-auto grid max-w-[1400px] gap-10 lg:grid-cols-[300px_minmax(0,1fr)] lg:gap-16">
-        {/* --- Rail ------------------------------------------------------- */}
-        <div className="lg:sticky lg:top-28 lg:self-start">
-          <SectionHeading align="left" className="!my-0">
-            Work
-          </SectionHeading>
+    <section id="work" className="bg-[#0C0C0C] px-4 py-20 sm:px-8 md:py-28 lg:px-12 xl:px-16">
+      <SectionHeading className="mb-12 sm:mb-16">Work</SectionHeading>
+
+      <div className="mx-auto grid max-w-[1400px] gap-8 lg:grid-cols-[264px_minmax(0,1fr)] lg:gap-12">
+        {/* --- Selector panel --------------------------------------------- */}
+        {/* Sticky in both layouts. Because it's a grid item, its containing
+            block is the grid — so it pins on entry and releases at the end of
+            the section without any scroll listener. On small screens it
+            collapses to a single scrollable row of chips under the navbar. */}
+        <div
+          className="sticky top-[64px] z-30 min-w-0 self-start rounded-[16px] border
+                     border-[#D7E2EA]/12 bg-[#111111]/95 p-3 backdrop-blur-md sm:top-[72px]
+                     lg:top-28 lg:rounded-[20px] lg:bg-[#111111] lg:p-6 lg:backdrop-blur-none"
+        >
+          <p className="hidden text-[10px] font-bold tracking-[1.6px] text-[#D7E2EA]/45 uppercase lg:block">
+            Browse by type
+          </p>
+          <p className="font-body hidden text-[13px] leading-[1.5] text-[#D7E2EA]/60 lg:mt-2 lg:block">
+            Four kinds of work, from research-led case studies to the tools I build.
+          </p>
 
           <div
             role="tablist"
             aria-label="Filter work by category"
-            className="mt-8 flex flex-wrap gap-2 lg:flex-col lg:items-start lg:gap-1"
+            className="flex min-w-0 flex-wrap gap-1.5 sm:gap-2 lg:mt-6 lg:flex-col lg:items-stretch
+                       lg:gap-1 lg:border-t lg:border-[#D7E2EA]/10 lg:pt-5"
           >
             {chips.map((chip) => {
               const active = filter === chip.id
@@ -171,8 +186,10 @@ export function WorkSection() {
                     setFilter(chip.id)
                     setExpanded(false)
                   }}
-                  className={`relative rounded-full px-4 py-2 text-[11px] font-medium tracking-widest
-                              uppercase transition-colors duration-300 lg:w-full lg:text-left
+                  className={`relative rounded-full px-3 py-1.5 text-[10px] font-medium
+                              tracking-[0.12em] whitespace-nowrap uppercase transition-colors
+                              duration-300 sm:px-4 sm:py-2 sm:tracking-widest sm:text-[11px]
+                              lg:w-full lg:text-left
                               ${active ? 'text-[#0C0C0C]' : 'text-[#D7E2EA]/60 hover:text-[#D7E2EA]'}`}
                 >
                   {active && (
@@ -182,7 +199,7 @@ export function WorkSection() {
                       transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                     />
                   )}
-                  <span className="relative z-10 flex items-center gap-2">
+                  <span className="relative z-10 flex items-center justify-between gap-3">
                     {chip.label}
                     <span className={active ? 'opacity-50' : 'opacity-40'}>{count}</span>
                   </span>
@@ -193,7 +210,7 @@ export function WorkSection() {
         </div>
 
         {/* --- Grid ------------------------------------------------------- */}
-        <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8">
+        <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-3">
           <AnimatePresence mode="sync" initial={false}>
             {visible.map((item) => (
               <motion.div
@@ -213,7 +230,7 @@ export function WorkSection() {
               type="button"
               onClick={() => setExpanded(true)}
               className="col-span-full mt-2 justify-self-start rounded-full border-2 border-[#D7E2EA]/30
-                         px-6 py-2.5 text-[11px] font-medium tracking-widest text-[#D7E2EA]/80
+                         px-6 py-3 text-[11px] font-medium tracking-widest text-[#D7E2EA]/80
                          uppercase transition-colors duration-300 hover:border-[#D7E2EA]
                          hover:text-[#D7E2EA]"
             >

@@ -14,8 +14,8 @@ function Row({ images, tag }: { images: string[]; tag: string }) {
         alt=""
         loading="lazy"
         decoding="async"
-        className="rounded-2xl object-cover"
-        style={{ width: 420, height: 270 }}
+        className="block h-auto rounded-[clamp(8px,1.4vw,16px)] object-cover"
+        style={{ width: 'clamp(144px, 38vw, 420px)', aspectRatio: '14 / 9' }}
       />
     </div>
   ))
@@ -60,10 +60,10 @@ export function MarqueeSection() {
   return (
     <section
       ref={sectionRef}
-      className="overflow-hidden bg-[#0C0C0C] pt-24 pb-10 sm:pt-32 md:pt-40"
+      className="overflow-hidden bg-[#0C0C0C] pt-10 pb-6 sm:pt-16 sm:pb-8 md:pt-24 md:pb-10 lg:pt-40"
     >
       <div
-        className="flex flex-col gap-3"
+        className="flex flex-col gap-2 md:gap-3"
         style={{
           transform: `scale(${scale})`,
           transformOrigin: 'center center',
@@ -71,13 +71,13 @@ export function MarqueeSection() {
         }}
       >
         <div
-          className="flex gap-3"
+          className="flex gap-2 md:gap-3"
           style={{ transform: `translateX(${shift}px)`, willChange: 'transform' }}
         >
           <Row images={ROW_ONE} tag="a" />
         </div>
         <div
-          className="flex gap-3"
+          className="flex gap-2 md:gap-3"
           style={{ transform: `translateX(${-shift}px)`, willChange: 'transform' }}
         >
           <Row images={ROW_TWO} tag="b" />

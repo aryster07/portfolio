@@ -170,7 +170,7 @@ export default function CaseStudy() {
             <h1
               ref={titleRef}
               tabIndex={-1}
-              className="font-heading mt-4 max-w-[980px] text-[clamp(3rem,8vw,7.5rem)] leading-[0.94] text-black uppercase outline-none"
+              className="font-body mt-4 max-w-[980px] text-[clamp(3rem,8vw,7.5rem)] leading-[1.02] font-semibold text-black outline-none"
             >
               {project.title}
             </h1>
@@ -334,7 +334,7 @@ export default function CaseStudy() {
               <p className="font-body text-[10px] font-bold tracking-[0.18em] text-black/45 uppercase">
                 Next case study
               </p>
-              <p className="font-heading mt-3 text-[clamp(1.75rem,4vw,3.75rem)] leading-[1.05] text-black uppercase">
+              <p className="font-body mt-3 text-[clamp(1.75rem,4vw,3.75rem)] leading-[1.15] font-semibold text-black">
                 {nextProject.title}
               </p>
             </div>

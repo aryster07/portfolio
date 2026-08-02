@@ -1,0 +1,103 @@
+@import 'tailwindcss';
+
+/* =============================================================================
+   GLOBAL RESET + THEME
+   ============================================================================= */
+
+/* This portfolio has one authored palette. `only light` prevents browsers from
+   automatically recolouring it when the device or browser uses dark mode; the
+   intentionally dark and light sections below keep their exact design colours. */
+:root {
+  color-scheme: only light;
+}
+
+/* Must live in @layer base. An unlayered `* { padding: 0 }` outranks every
+   Tailwind utility (they sit in @layer utilities), which silently kills all
+   padding and margin classes across the app. */
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html,
+  body,
+  #root {
+    background: #0c0c0c;
+    font-family: 'Kanit', sans-serif;
+  }
+
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+/* =============================================================================
+   HERO / SECTION GRADIENT HEADING
+   ============================================================================= */
+
+.hero-heading {
+  background: linear-gradient(180deg, #646973 0%, #bbccd7 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* =============================================================================
+   TYPE ROLES  (from Figma I0P8Mn26Qt74Q1DrwsqU6L)
+   ============================================================================= */
+
+@theme {
+  /* Kameron Bold — the "Hi, i'm aryan" display line */
+  --font-display: 'Kameron', ui-serif, Georgia, serif;
+  /* Archivo Black — the giant U / X letterforms */
+  --font-letterform: 'Archivo Black', ui-sans-serif, sans-serif;
+  /* Monospace — the skills section */
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  /* Body copy in the lower sections */
+  --font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
+  /* Moonrock — short one-to-three-word section headings only */
+  --font-heading: 'Moonrock', 'Kanit', ui-sans-serif, sans-serif;
+  /* Samarkan — the giant "7Frames" watermark in the footer */
+  --font-watermark: 'Samarkan', 'Kanit', ui-sans-serif, sans-serif;
+}
+
+/* Self-hosted from the files installed on this machine — neither is on Google
+   Fonts, so they ship with the project rather than being fetched. */
+@font-face {
+  font-family: 'Moonrock';
+  src: url('/fonts/moonrock.otf') format('opentype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Samarkan';
+  src: url('/fonts/samarkan.ttf') format('truetype');
+  font-weight: normal;
+  font-display: swap;
+}
+
+/* Horizontal chip rails scroll without showing a bar. */
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* The hero "U" is an outline, not a fill. */
+.letterform-outline {
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255, 255, 255, 0.85);
+}

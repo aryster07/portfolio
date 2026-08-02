@@ -16,7 +16,7 @@ export default function BlogIndex() {
   useSeo({
     title: `Blog — ${profile.name}`,
     description:
-      'Short, casual notes from Aryan Rana about design, products, teamwork and making things that actually work.',
+      'Writing on systems thinking, product logic, critical thinking, design practice and dependable software by Aryan Rana.',
     path: '/blog',
     jsonLd: {
       '@context': 'https://schema.org',
@@ -36,7 +36,7 @@ export default function BlogIndex() {
 
   return (
     <SiteChrome>
-      <main className="min-h-svh bg-white px-4 pt-36 pb-28 sm:px-8 lg:px-12 xl:px-16">
+      <main className="min-h-svh bg-white px-6 pt-36 pb-28 sm:px-12 lg:px-[124px]">
         <header className="mx-auto max-w-[900px]">
           <Link
             to={returnTo}
@@ -63,7 +63,7 @@ export default function BlogIndex() {
             Blog
           </h1>
           <p className="font-body mt-5 max-w-[640px] text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.6] text-black/70">
-            A few short thoughts on design, products, teams, and the small things that can make work better or mess it up.
+            Notes on how products behave, how design decisions spread through a team, and what it takes to build software people can depend on.
           </p>
         </header>
 
@@ -90,21 +90,21 @@ export default function BlogIndex() {
                       {post.tags.map((tag) => (
                         <span
                           key={tag}
-                          className="hidden rounded-full border border-black/20 px-2 py-1 text-[10px] sm:inline"
+                          className="hidden rounded-full border border-black/20 px-2.5 py-0.5 text-[10px] sm:inline"
                         >
                           {tag}
                         </span>
                       ))}
                     </div>
 
-                    <h2 className="font-body mt-2 text-[13px] leading-[1.25] font-bold text-black sm:text-[clamp(1.2rem,2vw,1.6rem)] sm:leading-normal">
+                    <h2 className="font-body mt-1.5 text-[13px] leading-[1.25] font-bold text-black sm:mt-2 sm:text-[clamp(1.2rem,2vw,1.6rem)] sm:leading-normal">
                       {post.title}
                     </h2>
-                    <p className="font-body mt-2 line-clamp-3 max-w-[560px] text-[11px] leading-[1.45] text-black/70 sm:line-clamp-none sm:text-[15px] sm:leading-[1.55]">
+                    <p className="font-body mt-1.5 line-clamp-3 max-w-[560px] text-[11px] leading-[1.45] text-black/70 sm:mt-2 sm:line-clamp-none sm:text-[15px] sm:leading-[1.55]">
                       {post.excerpt}
                     </p>
 
-                    <span className="font-body mt-3 inline-flex items-center gap-2 border-b border-black pb-1 text-[11px] font-bold text-black sm:mt-4 sm:text-[14px]">
+                    <span className="font-body mt-3 inline-flex items-center gap-1.5 border-b border-black pb-0.5 text-[11px] font-bold text-black sm:mt-4 sm:gap-2 sm:text-[14px]">
                       Read More
                       <svg
                         width="14"

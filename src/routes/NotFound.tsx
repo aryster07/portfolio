@@ -16,7 +16,7 @@ export default function NotFound() {
 
 export function NotFoundView() {
   return (
-    <main className="grid min-h-svh place-items-center bg-[#0C0C0C] px-4 text-center sm:px-8 lg:px-12 xl:px-16">
+    <main className="grid min-h-svh place-items-center bg-[#0C0C0C] px-6 text-center">
       <div>
         <p className="font-heading text-[clamp(4rem,14vw,10rem)] leading-none text-[#D7E2EA]/25">
           404

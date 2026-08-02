@@ -4,13 +4,6 @@
    GLOBAL RESET + THEME
    ============================================================================= */
 
-/* This portfolio has one authored palette. `only light` prevents browsers from
-   automatically recolouring it when the device or browser uses dark mode; the
-   intentionally dark and light sections below keep their exact design colours. */
-:root {
-  color-scheme: only light;
-}
-
 /* Must live in @layer base. An unlayered `* { padding: 0 }` outranks every
    Tailwind utility (they sit in @layer utilities), which silently kills all
    padding and margin classes across the app. */
@@ -65,7 +58,7 @@
   --font-mono: 'JetBrains Mono', ui-monospace, monospace;
   /* Body copy in the lower sections */
   --font-body: 'IBM Plex Sans', ui-sans-serif, system-ui, sans-serif;
-  /* Moonrock — short one-to-three-word section headings only */
+  /* Moonrock — every section heading */
   --font-heading: 'Moonrock', 'Kanit', ui-sans-serif, sans-serif;
   /* Samarkan — the giant "7Frames" watermark in the footer */
   --font-watermark: 'Samarkan', 'Kanit', ui-sans-serif, sans-serif;
@@ -85,15 +78,6 @@
   src: url('/fonts/samarkan.ttf') format('truetype');
   font-weight: normal;
   font-display: swap;
-}
-
-/* Horizontal chip rails scroll without showing a bar. */
-.no-scrollbar {
-  scrollbar-width: none;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
 }
 
 /* The hero "U" is an outline, not a fill. */

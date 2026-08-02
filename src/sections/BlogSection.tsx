@@ -30,14 +30,14 @@ function rememberBlogSectionForBrowserBack(event: MouseEvent<HTMLAnchorElement>)
  */
 export function BlogSection() {
   return (
-    <section id="blog" className="relative overflow-hidden bg-white py-20 md:py-24">
-      <CircleBleed edge="top" size={120} reveal={0.5} />
+    <section id="blog" className="relative overflow-hidden bg-white py-[90px]">
+      <CircleBleed edge="top" size={122} reveal={0.32} />
 
-      <div className="px-4 sm:px-8 lg:px-12 xl:px-16">
+      <div className="px-6 sm:px-12 lg:px-[124px]">
         <SectionHeading tone="dark">From The Blog</SectionHeading>
       </div>
 
-      <div className="mt-12 grid w-full grid-cols-3 gap-x-3 gap-y-12 px-4 sm:gap-x-6 sm:px-8 lg:gap-x-8 lg:px-12 xl:px-16">
+      <div className="mt-12 grid w-full grid-cols-3 gap-x-3 gap-y-12 px-5 sm:gap-x-6 sm:px-12 lg:gap-x-8 lg:px-[124px]">
         {sortedPosts.slice(0, 3).map((post) => (
           <article
             key={post.slug}
@@ -61,7 +61,7 @@ export function BlogSection() {
               state={{ returnTo: BLOG_SECTION_RETURN }}
               onClick={rememberBlogSectionForBrowserBack}
               className="font-body mt-auto inline-flex w-fit items-center gap-1 border-b border-black
-                         pt-4 pb-1 text-[11px] font-bold text-black sm:gap-2 sm:pt-5 sm:text-[14px]"
+                         pt-4 pb-0.5 text-[11px] font-bold text-black sm:gap-2 sm:pt-5 sm:text-[14px]"
             >
               Read More
               <svg
@@ -84,13 +84,13 @@ export function BlogSection() {
       </div>
 
       {/* The section is a teaser; the full archive lives on its own page. */}
-      <div className="mt-14 flex justify-center px-4 sm:px-8">
+      <div className="mt-14 flex justify-center px-6">
         <Link
           to="/blog"
           state={{ returnTo: BLOG_SECTION_RETURN }}
           onClick={rememberBlogSectionForBrowserBack}
-          className="font-body inline-flex items-center gap-2 rounded-full border-2 border-black
-                     px-7 py-3 text-[12px] font-bold tracking-widest text-black uppercase
+          className="font-body inline-flex items-center gap-2.5 rounded-full border-2 border-black
+                     px-7 py-3.5 text-[12px] font-bold tracking-widest text-black uppercase
                      transition-colors duration-300 hover:bg-black hover:text-white sm:text-[13px]"
         >
           Explore All Blogs
@@ -110,7 +110,7 @@ export function BlogSection() {
         </Link>
       </div>
 
-      <CircleBleed edge="bottom" size={120} reveal={0.5} />
+      <CircleBleed edge="bottom" size={122} reveal={0.32} />
     </section>
   )
 }

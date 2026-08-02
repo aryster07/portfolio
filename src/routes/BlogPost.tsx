@@ -28,7 +28,9 @@ export default function BlogPost() {
           datePublished: post.date,
           dateModified: post.date,
           keywords: post.tags.join(', '),
-          wordCount: post.body.join(' ').split(/\s+/).length,
+          wordCount: [post.intro, ...post.sections.flatMap((s) => s.body)]
+            .join(' ')
+            .split(/\s+/).length,
           author: { '@type': 'Person', name: profile.name, url: SITE_URL },
           publisher: { '@type': 'Person', name: profile.brand, url: SITE_URL },
           mainEntityOfPage: { '@type': 'WebPage', '@id': `${SITE_URL}/blog/${post.slug}` },
@@ -43,7 +45,7 @@ export default function BlogPost() {
 
   return (
     <SiteChrome>
-      <main className="min-h-svh bg-white px-4 pt-36 pb-28 sm:px-8 lg:px-12 xl:px-16">
+      <main className="min-h-svh bg-white px-6 pt-36 pb-28 sm:px-12">
         <article className="mx-auto max-w-[720px]">
           <Link
             to="/blog"
@@ -73,7 +75,7 @@ export default function BlogPost() {
               <span>{post.readingMinutes} min read</span>
             </div>
 
-            <h1 className="font-body mt-4 text-[clamp(2rem,5vw,56px)] leading-[1.15] font-semibold text-black">
+            <h1 className="font-heading mt-4 text-[clamp(2rem,5vw,56px)] leading-[1.15] text-black uppercase">
               {post.title}
             </h1>
             <p className="font-body mt-5 text-[clamp(1.05rem,1.5vw,1.3rem)] leading-[1.6] text-black/70">
@@ -85,11 +87,23 @@ export default function BlogPost() {
             </div>
           </header>
 
-          <div className="font-body mt-12 space-y-6">
-            {post.body.map((paragraph, index) => (
-              <p key={index} className="text-[17px] leading-[1.75] text-black/85">
-                {paragraph}
-              </p>
+          <div className="font-body mt-12">
+            <p className="text-[17px] leading-[1.75] text-black">{post.intro}</p>
+
+            {post.sections.map((section) => (
+              <section key={section.heading} className="mt-12">
+                <h2
+                  id={section.heading.toLowerCase().replace(/[^a-z0-9]+/g, '-')}
+                  className="text-[clamp(1.25rem,2.2vw,1.6rem)] font-bold text-black"
+                >
+                  {section.heading}
+                </h2>
+                {section.body.map((para, i) => (
+                  <p key={i} className="mt-4 text-[17px] leading-[1.75] text-black/85">
+                    {para}
+                  </p>
+                ))}
+              </section>
             ))}
           </div>
 

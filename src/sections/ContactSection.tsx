@@ -14,9 +14,9 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="relative overflow-clip bg-[#F8F9FA] px-4 py-24 sm:px-8 lg:px-12 xl:px-16"
+      className="relative overflow-clip bg-[#F8F9FA] px-6 py-24 sm:px-12 lg:px-24"
     >
-      <CircleBleed edge="top" size={120} reveal={0.5} />
+      <CircleBleed edge="top" size={122} reveal={0.32} />
 
       <div className="mx-auto flex max-w-[720px] flex-col items-center gap-4 text-center">
         <SectionHeading tone="dark">{contact.title}</SectionHeading>

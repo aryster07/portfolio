@@ -1,13 +1,13 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router'
-import { BlogEndChips } from '@/components/BlogEndChips'
+import { BlogEndLinks } from '@/components/BlogEndLinks'
 import { BlogVector } from '@/components/BlogVectors'
 import { SiteChrome } from '@/components/SiteChrome'
 import { SlowDownModal } from '@/components/SlowDownModal'
 import { NotFoundView } from '@/routes/NotFound'
 import { formatPostDate, getPost, profile, sortedPosts } from '@/data/content'
 import { getBlogReturnTo } from '@/lib/blogNavigation'
-import { useFastScroll, useReachedElement } from '@/lib/readingSignals'
+import { useFastScroll } from '@/lib/readingSignals'
 import { SITE_URL, useSeo } from '@/lib/seo'
 
 /** How many of the newest posts the skim-detector can offer as an alternative. */
@@ -19,9 +19,6 @@ export default function BlogPost() {
   const location = useLocation()
   const returnTo = getBlogReturnTo(location.state)
   const post = slug ? getPost(slug) : undefined
-
-  const endRef = useRef<HTMLDivElement>(null)
-  const atEnd = useReachedElement(endRef)
 
   const [slowDownOpen, setSlowDownOpen] = useState(false)
   /** One nudge per post — a second one would be nagging, not helping. */
@@ -139,12 +136,10 @@ export default function BlogPost() {
             ))}
           </div>
 
-          {/* Marks the end of the read, so the chips know when to come up. */}
-          <div ref={endRef} aria-hidden="true" className="mt-12 h-px w-full" />
+          <BlogEndLinks next={next} returnTo={returnTo} />
         </article>
       </main>
 
-      <BlogEndChips visible={atEnd} next={next} returnTo={returnTo} />
       <SlowDownModal
         open={slowDownOpen}
         suggestion={suggestion}

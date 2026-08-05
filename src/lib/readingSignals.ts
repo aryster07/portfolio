@@ -1,5 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
-import type { RefObject } from 'react'
+import { useEffect, useRef } from 'react'
 
 /** Sustained speed that reads as skimming rather than reading, in px/ms. */
 const FAST_VELOCITY = 2.2
@@ -73,38 +72,3 @@ export function useFastScroll(onFastScroll: () => void, enabled: boolean) {
   }, [enabled])
 }
 
-/** Taller than any page here, so "above the viewport" still counts as reached. */
-const ABOVE_VIEWPORT = 100000
-
-/**
- * True once the reader has scrolled down to the element, and false again if
- * they scroll back above it.
- *
- * Plain intersection is wrong twice over: the element marks the end of the
- * article and the footer below it is taller than a phone screen, so the chips
- * would drop out again at the very bottom; and jumping straight past it — the
- * End key, a restored scroll position — never crosses an intersection boundary
- * at all, so nothing fires. Extending the root upwards makes the test simply
- * "is the element at or above the bottom of the viewport", which changes state
- * exactly once in each direction no matter how the reader got there.
- */
-export function useReachedElement(ref: RefObject<HTMLElement | null>) {
-  const [reached, setReached] = useState(false)
-
-  useEffect(() => {
-    const element = ref.current
-    if (!element) return
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) setReached(entry.isIntersecting)
-      },
-      { rootMargin: `${ABOVE_VIEWPORT}px 0px 0px 0px` },
-    )
-    observer.observe(element)
-
-    return () => observer.disconnect()
-  }, [ref])
-
-  return reached
-}

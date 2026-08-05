@@ -86,6 +86,26 @@ export function BlogVector({ name }: { name: BlogVector }) {
         </svg>
       )
 
+    // A dense mass beside the thin layer added on top — scale mismatch.
+    case 'scale':
+      return (
+        <svg {...frame}>
+          {[0, 1, 2, 3, 4, 5, 6].map((i) => (
+            <rect key={i} x="88" y={68 + i * 16} width="112" height="8" fill="#0C0C0C" />
+          ))}
+          <path d="M200 152 232 152" stroke="#0C0C0C" strokeWidth="2.5" />
+          <rect
+            x="232"
+            y="140"
+            width="60"
+            height="24"
+            stroke="#0C0C0C"
+            strokeWidth="3"
+            fill="#FFFFFF"
+          />
+        </svg>
+      )
+
     // Cursor + selection marquee — tooling / plugins.
     case 'tooling':
       return (

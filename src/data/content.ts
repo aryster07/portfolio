@@ -255,6 +255,36 @@ export const sortedPosts = [...blogPosts].sort((a, b) => b.date.localeCompare(a.
 
 export const getPost = (slug: string) => blogPosts.find((post) => post.slug === slug)
 
+export type HomePostBadge = 'Latest' | 'Most read' | 'Recent'
+
+/** How many posts the homepage rail shows. */
+const HOME_POST_COUNT = 3
+
+/**
+ * The homepage rail: the newest post first, then whatever is marked as
+ * most-read, topped up with the next newest if there are not enough.
+ *
+ * "Most read" comes from the hand-set `featured` flag, not from traffic — the
+ * site is static and has no analytics backend to sort on. Swapping in real
+ * numbers later only means changing how this list is ordered.
+ */
+export const homePosts: { post: (typeof sortedPosts)[number]; badge: HomePostBadge }[] = (() => {
+  const picks: { post: (typeof sortedPosts)[number]; badge: HomePostBadge }[] = []
+  const taken = new Set<string>()
+
+  const add = (post: (typeof sortedPosts)[number] | undefined, badge: HomePostBadge) => {
+    if (!post || taken.has(post.slug) || picks.length >= HOME_POST_COUNT) return
+    taken.add(post.slug)
+    picks.push({ post, badge })
+  }
+
+  add(sortedPosts[0], 'Latest')
+  for (const post of sortedPosts) if (post.featured) add(post, 'Most read')
+  for (const post of sortedPosts) add(post, 'Recent')
+
+  return picks
+})()
+
 export const formatPostDate = (iso: string): string =>
   new Date(`${iso}T00:00:00Z`).toLocaleDateString('en-GB', {
     day: 'numeric',

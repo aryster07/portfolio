@@ -2,7 +2,7 @@ import type { MouseEvent } from 'react'
 import { Link } from 'react-router'
 import { SectionHeading, CircleBleed } from '@/components/SectionHeading'
 import { BlogVector } from '@/components/BlogVectors'
-import { sortedPosts } from '@/data/content'
+import { homePosts } from '@/data/content'
 import { BLOG_SECTION_RETURN } from '@/lib/blogNavigation'
 
 function rememberBlogSectionForBrowserBack(event: MouseEvent<HTMLAnchorElement>) {
@@ -38,7 +38,7 @@ export function BlogSection() {
       </div>
 
       <div className="mt-12 grid w-full grid-cols-3 gap-x-3 gap-y-12 px-4 sm:gap-x-6 sm:px-8 lg:gap-x-8 lg:px-12 xl:px-16">
-        {sortedPosts.slice(0, 3).map((post) => (
+        {homePosts.map(({ post, badge }) => (
           <article
             key={post.slug}
             className="group flex min-w-0 flex-col"
@@ -49,7 +49,11 @@ export function BlogSection() {
               </div>
             </div>
 
-            <h3 className="font-body mt-3 text-[13px] leading-[1.25] font-bold text-black sm:mt-5 sm:text-[clamp(1.05rem,1.4vw,1.25rem)] sm:leading-normal">
+            <span className="font-body mt-3 block text-[9px] font-bold tracking-[1.2px] text-black/40 uppercase sm:mt-5 sm:text-[11px]">
+              {badge}
+            </span>
+
+            <h3 className="font-body mt-1.5 text-[13px] leading-[1.25] font-bold text-black sm:mt-2 sm:text-[clamp(1.05rem,1.4vw,1.25rem)] sm:leading-normal">
               {post.title}
             </h3>
             <p className="font-body mt-2 text-[11px] leading-[1.45] text-black/80 sm:text-[14px] sm:leading-[1.5]">

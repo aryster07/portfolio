@@ -1,4 +1,4 @@
-export type BlogVector = 'geometry' | 'contrast' | 'network' | 'system' | 'tooling'
+export type BlogVector = 'geometry' | 'contrast' | 'network' | 'scale' | 'system' | 'tooling'
 
 interface BlogPost {
   slug: string
@@ -8,7 +8,14 @@ interface BlogPost {
   date: string
   readingMinutes: number
   tags: string[]
+  /** One per post — the cover art is what tells them apart at a glance. */
   vector: BlogVector
+  /**
+   * Marks a post as one of the most-read, for the homepage rail. Curated by
+   * hand: the site has no analytics backend, so there is no real visit count
+   * to sort on. Flip these as the real numbers come in.
+   */
+  featured?: boolean
   /** Each string is rendered as one paragraph. */
   body: string[]
 }
@@ -25,7 +32,7 @@ export const blogPosts: BlogPost[] = [
     date: '2026-08-05',
     readingMinutes: 3,
     tags: ['AI', 'Critical Thinking'],
-    vector: 'contrast',
+    vector: 'scale',
     body: [
       'Someone tells the assistant how they talk, how they write, what their visual direction is, which words they never use. Then they say they are training their AI. They are not. They are personalizing it, and those two words describe completely different things happening at completely different scales.',
       'What actually happens when you paste your tone of voice into a chat is that your text sits in the context window next to your question. The model reads it the same way it reads everything else you typed. Nothing inside the model changes. If a memory feature saves it, it is saved as text and quietly pasted back in next time, which is a very good product feature and still not training. Nobody else in the world gets a model that writes like you because you explained yourself in a chat window.',
@@ -58,6 +65,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 1,
     tags: ['Critical Thinking', 'Design Practice'],
     vector: 'contrast',
+    featured: true,
     body: [
       'I do not want to accept an idea just because a smart person said it or a famous company uses it. That can be a good reason to look closer, but it is not proof that the idea is right for the problem in front of me.',
       'When someone says, “the research says so,” I want to know who was studied and in what situation. The same goes for copying a big product. Their users, goals and limits may be very different from ours. If I cannot explain an idea in my own words, I probably do not understand it yet.',
@@ -100,6 +108,7 @@ export const blogPosts: BlogPost[] = [
     readingMinutes: 1,
     tags: ['Engineering', 'Product Thinking'],
     vector: 'tooling',
+    featured: true,
     body: [
       'Development gets the thing working. Engineering asks whether it will keep working when real life gets messy. I do not see one as better than the other, and I am not talking about job titles. They are simply two kinds of work that a good product needs.',
       'The first version is a real achievement because it gives the team something they can use and learn from. But a good demo only proves that one path worked once. We still need to ask what happens when the internet is slow, data is missing, someone taps twice or a release goes wrong.',

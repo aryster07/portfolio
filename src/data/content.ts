@@ -121,7 +121,7 @@ export const work: WorkItem[] = [
     meta: 'Find & fix missing fonts',
     category: 'plugins',
     vector: 'font-manager',
-    // TODO(aryan): Figma Community URL needed.
+    href: 'https://www.figma.com/community/plugin/1665274728752886163/font-manager',
   },
   {
     id: 'select-to-replace',
@@ -145,7 +145,7 @@ export const work: WorkItem[] = [
     meta: 'Fetch, filter & export Figma comments',
     category: 'plugins',
     vector: 'comment-deck',
-    // TODO(aryan): Figma Community URL needed.
+    href: 'https://www.figma.com/community/plugin/1665269721936256397/get-comments',
   },
 
   // --- Case studies & design ------------------------------------------------

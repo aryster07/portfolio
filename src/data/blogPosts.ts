@@ -19,6 +19,23 @@ interface BlogPost {
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'you-are-not-training-your-ai',
+    title: 'You Are Not Training Your AI. You Are Personalizing It.',
+    excerpt: 'Telling a model how you write is onboarding, not training. The difference matters.',
+    date: '2026-08-05',
+    readingMinutes: 2,
+    tags: ['AI', 'Critical Thinking'],
+    vector: 'contrast',
+    body: [
+      'Someone tells the assistant how they talk, how they write, what their visual direction is, which words they never use. Then they say they are training their AI. They are not. They are personalizing it, and those two words describe completely different things happening at completely different scales.',
+      'What actually happens when you paste your tone of voice into a chat is that your text sits in the context window next to your question. The model reads it the same way it reads everything else you typed. Nothing inside the model changes. If a memory feature saves it, it is saved as text and quietly pasted back in next time, which is a very good product feature and still not training. Nobody else in the world gets a model that writes like you because you explained yourself in a chat window.',
+      'Training is what the model owner did before you ever opened the app. Pretraining runs over an enormous body of text, then post-training shapes the behavior with fine-tuning, human feedback and safety work. It runs on thousands of accelerators for weeks. It pulls megawatts, and every one of those watts comes back out as heat, which is why this conversation ends up being about cooling systems, water and grid capacity. A single frontier run costs in the tens to hundreds of millions of dollars, and the datacenter build-out behind it is the part measured in billions. That is the machinery people are casually claiming to operate from a text box.',
+      'The clearest way to see it is a new joiner in your office. You tell them how the team works, which client hates long emails, where the files live, what the review process is. That is onboarding. You are personalizing a person to your environment. Their actual training was the years of school, the degree, the failed attempts, the money and time and setbacks it took to become someone worth hiring. You did not train them in a week. You told them where the coffee machine is.',
+      'One honest caveat, because I do not want to overcorrect. Training is not sealed off from everyone but the lab. Fine-tuning is real and available: you can adapt a model on your own data, and it does change the weights. That is genuine training, in a small and specific way. It just has nothing to do with typing your preferences into a chat and calling it that. And when a system does learn from user feedback, the party doing the training is still the owner, not you.',
+      'This matters because the confusion is not harmless. It makes people think their preferences are permanent when they are one cleared context away from gone. It makes them think their data went into a model when usually it went into a prompt, or worry about the opposite when it genuinely did. It makes buyers pay for personalization while believing they bought a custom model. Use the right word. Personalization is yours, and it is genuinely useful. Training belongs to something much larger, much more expensive and much less magical than a chat window.',
+    ],
+  },
+  {
     slug: 'design-the-system-before-the-screen',
     title: 'Design the System Before You Design the Screen',
     excerpt: 'A polished screen cannot fix a product that still does not make sense.',

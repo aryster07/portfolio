@@ -64,7 +64,7 @@ export function SlowDownModal({ open, suggestion, returnTo, onClose }: SlowDownM
           >
             <h2
               id="slow-down-title"
-              className="font-heading text-[clamp(1.6rem,5vw,2.2rem)] leading-[1.15] text-black uppercase"
+              className="font-body text-[clamp(1.5rem,4.5vw,2rem)] leading-[1.2] font-semibold text-black"
             >
               Whoaaa! Slow down there, homie
             </h2>

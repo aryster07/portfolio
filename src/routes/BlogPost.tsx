@@ -1,10 +1,17 @@
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation, useParams } from 'react-router'
+import { BlogEndChips } from '@/components/BlogEndChips'
 import { BlogVector } from '@/components/BlogVectors'
 import { SiteChrome } from '@/components/SiteChrome'
+import { SlowDownModal } from '@/components/SlowDownModal'
 import { NotFoundView } from '@/routes/NotFound'
 import { formatPostDate, getPost, profile, sortedPosts } from '@/data/content'
 import { getBlogReturnTo } from '@/lib/blogNavigation'
+import { useFastScroll, useReachedElement } from '@/lib/readingSignals'
 import { SITE_URL, useSeo } from '@/lib/seo'
+
+/** How many of the newest posts the skim-detector can offer as an alternative. */
+const SUGGESTION_POOL = 4
 
 /** /blog/:slug — one article per URL. */
 export default function BlogPost() {
@@ -12,6 +19,34 @@ export default function BlogPost() {
   const location = useLocation()
   const returnTo = getBlogReturnTo(location.state)
   const post = slug ? getPost(slug) : undefined
+
+  const endRef = useRef<HTMLDivElement>(null)
+  const atEnd = useReachedElement(endRef)
+
+  const [slowDownOpen, setSlowDownOpen] = useState(false)
+  /** One nudge per post — a second one would be nagging, not helping. */
+  const [alreadyNudged, setAlreadyNudged] = useState(false)
+
+  useEffect(() => {
+    setSlowDownOpen(false)
+    setAlreadyNudged(false)
+  }, [slug])
+
+  const onFastScroll = useCallback(() => {
+    setSlowDownOpen(true)
+    setAlreadyNudged(true)
+  }, [])
+
+  useFastScroll(onFastScroll, Boolean(post) && !alreadyNudged)
+
+  // Picked once per post so it does not shuffle underneath the reader.
+  const suggestion = useMemo(
+    () => {
+      const others = sortedPosts.filter((p) => p.slug !== slug).slice(0, SUGGESTION_POOL)
+      return others.length ? others[Math.floor(Math.random() * others.length)] : undefined
+    },
+    [slug],
+  )
 
   useSeo({
     title: post ? `${post.title} — ${profile.name}` : 'Not found',
@@ -104,20 +139,18 @@ export default function BlogPost() {
             ))}
           </div>
 
-          <nav className="mt-12 border-t border-black/15 pt-8">
-            <p className="font-body text-[11px] font-bold tracking-[1.2px] text-black/40 uppercase">
-              Next
-            </p>
-            <Link
-              to={`/blog/${next.slug}`}
-              state={{ returnTo }}
-              className="font-body mt-2 block text-[clamp(1.15rem,2vw,1.5rem)] font-bold text-black transition-opacity hover:opacity-60"
-            >
-              {next.title}
-            </Link>
-          </nav>
+          {/* Marks the end of the read, so the chips know when to come up. */}
+          <div ref={endRef} aria-hidden="true" className="mt-12 h-px w-full" />
         </article>
       </main>
+
+      <BlogEndChips visible={atEnd} next={next} returnTo={returnTo} />
+      <SlowDownModal
+        open={slowDownOpen}
+        suggestion={suggestion}
+        returnTo={returnTo}
+        onClose={() => setSlowDownOpen(false)}
+      />
     </SiteChrome>
   )
 }

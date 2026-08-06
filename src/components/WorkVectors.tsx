@@ -46,7 +46,6 @@ type ComponentTileProps = {
 function ComponentTile({ x, y, dx, dy, rotation, variant, reducedMotion }: ComponentTileProps) {
   return (
     <motion.g
-      initial={false}
       transform={reducedMotion ? `translate(${dx} ${dy})` : undefined}
       animate={
         reducedMotion
@@ -196,7 +195,6 @@ type FontRowProps = {
 function FontRow({ y, family, sample, missing = false, reducedMotion }: FontRowProps) {
   return (
     <motion.g
-      initial={false}
       animate={reducedMotion ? undefined : { x: [-14, -14, 0, 0, -14], opacity: [0.45, 0.45, 1, 1, 0.45] }}
       transition={loop}
     >
@@ -344,7 +342,6 @@ type CommentBubbleProps = {
 function CommentBubble({ x, y, dx, dy, avatar, reducedMotion }: CommentBubbleProps) {
   return (
     <motion.g
-      initial={false}
       transform={reducedMotion ? `translate(${dx} ${dy})` : undefined}
       animate={reducedMotion ? undefined : { x: [0, 0, dx, dx, 0], y: [0, 0, dy, dy, 0] }}
       transition={loop}

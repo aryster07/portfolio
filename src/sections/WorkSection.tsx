@@ -211,7 +211,15 @@ export function WorkSection() {
 
         {/* --- Grid ------------------------------------------------------- */}
         <div className="grid grid-cols-2 gap-x-3 gap-y-6 sm:gap-x-6 sm:gap-y-8 lg:grid-cols-3">
-          <AnimatePresence mode="sync" initial={false}>
+          {/*
+            No `initial={false}` here. It reads as "skip the entrance on first
+            paint", but Framer Motion propagates it to every descendant motion
+            component — including the looping animations inside the plugin
+            vectors, whose loops only ever start on mount. With it set, those
+            loops paint their first keyframe and freeze. The cost of dropping it
+            is one 0.28s fade of the cards on first load.
+          */}
+          <AnimatePresence mode="sync">
             {visible.map((item) => (
               <motion.div
                 key={item.id}

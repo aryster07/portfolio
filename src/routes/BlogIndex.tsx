@@ -1,6 +1,9 @@
+import { useMemo, useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import { BlogVector } from '@/components/BlogVectors'
 import { SiteChrome } from '@/components/SiteChrome'
+import { BLOG_TOPICS } from '@/data/blogPosts'
+import type { BlogTopic } from '@/data/blogPosts'
 import { formatPostDate, profile, sortedPosts } from '@/data/content'
 import { getBlogReturnTo } from '@/lib/blogNavigation'
 import { SITE_URL, useSeo } from '@/lib/seo'
@@ -9,9 +12,23 @@ import { SITE_URL, useSeo } from '@/lib/seo'
  * /blog — the index. A real page rather than an anchor, so it can be crawled,
  * indexed and linked to on its own.
  */
+type Filter = BlogTopic | 'All'
+
 export default function BlogIndex() {
   const location = useLocation()
   const returnTo = getBlogReturnTo(location.state)
+  const [filter, setFilter] = useState<Filter>('All')
+
+  // Only offer a chip for a topic that actually has posts behind it.
+  const filters = useMemo<Filter[]>(
+    () => ['All', ...BLOG_TOPICS.filter((topic) => sortedPosts.some((p) => p.topic === topic))],
+    [],
+  )
+
+  const visible = useMemo(
+    () => (filter === 'All' ? sortedPosts : sortedPosts.filter((p) => p.topic === filter)),
+    [filter],
+  )
 
   useSeo({
     title: `Blog — ${profile.name}`,
@@ -67,9 +84,37 @@ export default function BlogIndex() {
           </p>
         </header>
 
-        <div className="mx-auto mt-16 max-w-[900px]">
+        <div className="mx-auto mt-12 max-w-[900px]">
+          <div
+            role="group"
+            aria-label="Filter posts by topic"
+            className="flex flex-wrap gap-2"
+          >
+            {filters.map((option) => {
+              const active = option === filter
+              return (
+                <button
+                  key={option}
+                  type="button"
+                  onClick={() => setFilter(option)}
+                  aria-pressed={active}
+                  className={`font-body rounded-full border px-4 py-2 text-[11px] font-bold tracking-wide uppercase
+                              transition-colors sm:text-[12px] ${
+                                active
+                                  ? 'border-black bg-black text-white'
+                                  : 'border-black/20 bg-white text-black/60 hover:border-black hover:text-black'
+                              }`}
+                >
+                  {option}
+                </button>
+              )
+            })}
+          </div>
+        </div>
+
+        <div className="mx-auto mt-10 max-w-[900px]">
           <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:flex sm:flex-col sm:gap-0">
-            {sortedPosts.map((post) => (
+            {visible.map((post) => (
               <li key={post.slug} className="sm:border-t sm:border-black/15 sm:last:border-b">
                 <Link
                   to={`/blog/${post.slug}`}

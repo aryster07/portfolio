@@ -1,9 +1,26 @@
-export type BlogVector = 'geometry' | 'contrast' | 'network' | 'scale' | 'system' | 'tooling'
+export type BlogVector =
+  | 'geometry'
+  | 'contrast'
+  | 'network'
+  | 'replica'
+  | 'scale'
+  | 'system'
+  | 'tooling'
+
+/**
+ * Coarse buckets for the filter chips on /blog. Deliberately few — the `tags`
+ * below are finer-grained, and ten one-post filters help nobody navigate.
+ */
+export const BLOG_TOPICS = ['UI/UX', 'Product', 'Tech', 'Mindset'] as const
+
+export type BlogTopic = (typeof BLOG_TOPICS)[number]
 
 interface BlogPost {
   slug: string
   title: string
   excerpt: string
+  /** Which filter chip this post sits under. */
+  topic: BlogTopic
   /** ISO date used for ordering and article metadata. */
   date: string
   readingMinutes: number
@@ -26,7 +43,27 @@ interface BlogPost {
  */
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'you-copied-the-screen-not-the-problem',
+    topic: 'Mindset',
+    title: 'You Copied the Screen. You Did Not Understand the Problem.',
+    excerpt: 'A design can look like the answer and still be built by someone who never asked the question.',
+    date: '2026-08-06',
+    readingMinutes: 3,
+    tags: ['Design Practice', 'Critical Thinking'],
+    vector: 'replica',
+    body: [
+      'A brief arrives. Build me this. The person building it has never worked in that industry, has never met the people who will use it, and does not really know what the thing is for. So they search. They find three shots on Dribbble that look like the right category, or they ask a model to generate something in that shape. They rebuild what they found, as close to it as they can get, and send it back. The client says it looks good. Everyone moves on.',
+      'What happened there is that the shape of an answer got copied without the question ever being asked. The reference existed because someone else solved a specific problem for specific people under specific constraints. None of that came across in the screenshot. What came across was the layout. So the layout gets reproduced and the reasoning stays behind, and what ships is a costume rather than a solution.',
+      'The reason this survives is that the client usually cannot check. They are not going to sit with the flow for an hour, try the awkward path, or ask what happens when the list is empty. They see something that resembles what they had in their head, and resemblance is what they were able to evaluate. Approval is not proof that the work is right. It is proof that nothing was obviously wrong in the ten minutes they had.',
+      'Look properly, though, and the seams are everywhere. States that only exist in the happy case. A form that never says what went wrong. Labels borrowed from a product with a different business model, so they promise something this product cannot do. A dashboard full of metrics nobody asked for, because the reference had metrics. Empty screens with no empty state. A flow that assumes the user already knows the thing they came here to find out. None of this is subtle once you go looking. It is only invisible while nobody looks.',
+      'The tell is always the same: the person who built it cannot explain why. Why this step comes before that one. Why this is a dropdown and not a search. Why the destructive action sits where it does. Ask, and you get a description of what it looks like rather than a reason it works that way. That is the moment you learn the reference was the whole process.',
+      'The fix is not more research or a heavier process. It is a handful of questions asked before opening the canvas. Who actually uses this, and what are they in the middle of when they do. What is the one thing that must not go wrong. What happens when it is empty, slow, or broken. What does the client have to be true about their own business for this to work. Half an hour of that changes what you build, because you stop reproducing a picture and start answering something.',
+      'References are fine. I use them constantly. The difference is whether you take the reasoning or just the rectangle. If you can say what problem the reference was solving and why the same problem exists here, you are borrowing a solution. If you cannot, you are tracing an outline and hoping nobody looks inside it. Somebody eventually does, and usually it is the user, at the exact moment they needed the thing to work.',
+    ],
+  },
+  {
     slug: 'you-are-not-training-your-ai',
+    topic: 'Tech',
     title: 'You Are Not Training Your AI. You Are Personalizing It.',
     excerpt: 'Telling a model how you write is onboarding, not training. The difference matters.',
     date: '2026-08-05',
@@ -45,6 +82,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'design-the-system-before-the-screen',
+    topic: 'UI/UX',
     title: 'Design the System Before You Design the Screen',
     excerpt: 'A polished screen cannot fix a product that still does not make sense.',
     date: '2026-08-02',
@@ -59,6 +97,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'a-smart-person-said-it-is-not-enough',
+    topic: 'Mindset',
     title: 'A Smart Person Said It. That Is Not Enough.',
     excerpt: 'A smart person can share a good idea, but we still need to think for ourselves.',
     date: '2026-07-28',
@@ -74,6 +113,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'the-hidden-cost-of-designing-for-the-deadline',
+    topic: 'Product',
     title: 'The Hidden Cost of Designing for the Deadline',
     excerpt: 'A rushed screen often saves time now and creates more work for everyone later.',
     date: '2026-07-22',
@@ -88,6 +128,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'when-products-get-serious-every-word-matters',
+    topic: 'UI/UX',
     title: 'When Products Get Serious, Every Word Matters',
     excerpt: 'When an action has real consequences, even a small word can make a big difference.',
     date: '2026-07-16',
@@ -102,6 +143,7 @@ export const blogPosts: BlogPost[] = [
   },
   {
     slug: 'development-creates-engineering-makes-dependable',
+    topic: 'Tech',
     title: 'Development Creates It. Engineering Makes It Dependable.',
     excerpt: 'Getting a product to work is one job; helping it stay reliable is another.',
     date: '2026-07-10',

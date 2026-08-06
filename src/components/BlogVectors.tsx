@@ -86,6 +86,26 @@ export function BlogVector({ name }: { name: BlogVector }) {
         </svg>
       )
 
+    // A solid original beside a traced outline with nothing inside it.
+    case 'replica':
+      return (
+        <svg {...frame}>
+          <rect x="96" y="76" width="88" height="88" fill="#0C0C0C" />
+          <circle cx="140" cy="120" r="16" fill="#FFFFFF" />
+          <path d="M124 148h32" stroke="#FFFFFF" strokeWidth="4" />
+          <rect
+            x="212"
+            y="76"
+            width="88"
+            height="88"
+            stroke="#0C0C0C"
+            strokeWidth="3"
+            strokeDasharray="10 8"
+            fill="#FFFFFF"
+          />
+        </svg>
+      )
+
     // A dense mass beside the thin layer added on top — scale mismatch.
     case 'scale':
       return (

@@ -39,49 +39,55 @@ export function BlogSection() {
 
       <div className="mt-12 grid w-full grid-cols-3 gap-x-3 gap-y-12 px-4 sm:gap-x-6 sm:px-8 lg:gap-x-8 lg:px-12 xl:px-16">
         {homePosts.map(({ post, badge }) => (
-          <article
-            key={post.slug}
-            className="group flex min-w-0 flex-col"
-          >
-            <div className="aspect-[384/240] w-full overflow-hidden border border-black bg-white">
-              <div className="size-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105">
-                <BlogVector name={post.vector} />
-              </div>
-            </div>
-
-            <span className="font-body mt-3 block text-[9px] font-bold tracking-[1.2px] text-black/40 uppercase sm:mt-5 sm:text-[11px]">
-              {badge}
-            </span>
-
-            <h3 className="font-body mt-1.5 text-[13px] leading-[1.25] font-bold text-black sm:mt-2 sm:text-[clamp(1.05rem,1.4vw,1.25rem)] sm:leading-normal">
-              {post.title}
-            </h3>
-            <p className="font-body mt-2 text-[11px] leading-[1.45] text-black/80 sm:text-[14px] sm:leading-[1.5]">
-              {post.excerpt}
-            </p>
-
+          <article key={post.slug} className="group flex min-w-0 flex-col">
+            {/*
+              The whole card is the link, cover included — people click the
+              picture. "Read More" is a span so it stays an affordance rather
+              than a second, nested anchor.
+            */}
             <Link
               to={`/blog/${post.slug}`}
               state={{ returnTo: BLOG_SECTION_RETURN }}
               onClick={rememberBlogSectionForBrowserBack}
-              className="font-body mt-auto inline-flex w-fit items-center gap-1 border-b border-black
-                         pt-4 pb-1 text-[11px] font-bold text-black sm:gap-2 sm:pt-5 sm:text-[14px]"
+              className="flex h-full min-w-0 flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
             >
-              Read More
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-                className="size-3 transition-transform duration-300 group-hover:translate-x-1 sm:size-3.5"
+              <div className="aspect-[384/240] w-full overflow-hidden border border-black bg-white">
+                <div className="size-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105">
+                  <BlogVector name={post.vector} />
+                </div>
+              </div>
+
+              <span className="font-body mt-3 block text-[9px] font-bold tracking-[1.2px] text-black/40 uppercase sm:mt-5 sm:text-[11px]">
+                {badge}
+              </span>
+
+              <h3 className="font-body mt-1.5 text-[13px] leading-[1.25] font-bold text-black sm:mt-2 sm:text-[clamp(1.05rem,1.4vw,1.25rem)] sm:leading-normal">
+                {post.title}
+              </h3>
+              <p className="font-body mt-2 text-[11px] leading-[1.45] text-black/80 sm:text-[14px] sm:leading-[1.5]">
+                {post.excerpt}
+              </p>
+
+              <span
+                className="font-body mt-auto inline-flex w-fit items-center gap-1 border-b border-black
+                           pt-4 pb-1 text-[11px] font-bold text-black sm:gap-2 sm:pt-5 sm:text-[14px]"
               >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
+                Read More
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  aria-hidden="true"
+                  className="size-3 transition-transform duration-300 group-hover:translate-x-1 sm:size-3.5"
+                >
+                  <path d="m9 18 6-6-6-6" />
+                </svg>
+              </span>
             </Link>
           </article>
         ))}

@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config'
 import react from '@astrojs/react'
-import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 
 // Drives canonicals, Open Graph URLs and the generated sitemap.
@@ -12,7 +11,7 @@ export default defineConfig({
   // point of the move: a crawler that never runs JavaScript still gets the
   // article text, the headings and the per-page metadata.
   output: 'static',
-  integrations: [react(), sitemap()],
+  integrations: [react()],
   vite: {
     plugins: [tailwindcss()],
     resolve: {

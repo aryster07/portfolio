@@ -8,3 +8,5 @@ dist/
 .idea/
 .DS_Store
 .venv
+# Astro build cache
+.astro/

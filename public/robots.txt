@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://aryanrana.design/sitemap-index.xml
+Sitemap: https://aryanrana.design/sitemap.xml

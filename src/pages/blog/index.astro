@@ -1,0 +1,142 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import BubbleMenu from '@/components/BubbleMenu'
+import BlogFilter from '@/components/BlogFilter'
+import { BlogVector } from '@/components/BlogVectors'
+import { Footer } from '@/sections/Footer'
+import { BLOG_TOPICS } from '@/data/blogPosts'
+import { formatPostDate, profile, sortedPosts } from '@/data/content'
+
+const site = Astro.site?.toString().replace(/\/$/, '') ?? ''
+const topics = BLOG_TOPICS.filter((topic) => sortedPosts.some((p) => p.topic === topic))
+
+const description =
+  'Essays on UI/UX design, design systems, product thinking and building software — by Aryan Rana, a UI/UX designer and Figma plugin developer.'
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Blog',
+  name: `${profile.name} — Blog`,
+  description,
+  url: `${site}/blog`,
+  inLanguage: 'en',
+  author: { '@type': 'Person', name: profile.name, url: site },
+  blogPost: sortedPosts.map((p) => ({
+    '@type': 'BlogPosting',
+    headline: p.title,
+    description: p.excerpt,
+    datePublished: p.date,
+    articleSection: p.topic,
+    keywords: p.tags.join(', '),
+    url: `${site}/blog/${p.slug}`,
+  })),
+}
+---
+
+<BaseLayout
+  title={`Design & Product Blog — ${profile.name}`}
+  description={description}
+  path="/blog"
+  jsonLd={jsonLd}
+>
+  <div class="bg-white" style="overflow-x: clip">
+    <BubbleMenu client:load />
+
+    <main class="min-h-svh bg-white px-4 pt-36 pb-28 sm:px-8 lg:px-12 xl:px-16">
+      <header class="mx-auto max-w-[900px]">
+        <a
+          href="/"
+          class="font-body inline-flex items-center gap-2 text-[13px] font-bold tracking-wide text-black/60 uppercase transition-colors hover:text-black"
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m15 18-6-6 6-6"></path>
+          </svg>
+          Back
+        </a>
+
+        <h1 class="font-heading mt-5 text-[clamp(2.25rem,6vw,72px)] leading-[1.1] text-black uppercase">
+          Blog
+        </h1>
+        <p class="font-body mt-5 max-w-[640px] text-[clamp(1rem,1.4vw,1.25rem)] leading-[1.6] text-black/70">
+          A few short thoughts on design, products, teams, and the small things that can make work
+          better or mess it up.
+        </p>
+      </header>
+
+      <div class="mx-auto mt-12 max-w-[900px]">
+        <BlogFilter client:idle topics={topics} />
+      </div>
+
+      <div class="mx-auto mt-10 max-w-[900px]">
+        <ul class="grid grid-cols-2 gap-x-4 gap-y-8 sm:flex sm:flex-col sm:gap-0">
+          {
+            sortedPosts.map((post) => (
+              <li data-topic={post.topic} class="sm:border-t sm:border-black/15 sm:last:border-b">
+                <a
+                  href={`/blog/${post.slug}`}
+                  class="group grid h-full grid-cols-1 content-start items-start gap-3 sm:grid-cols-[180px_minmax(0,1fr)] sm:items-center sm:gap-10 sm:py-8"
+                >
+                  <div class="aspect-[384/240] w-full overflow-hidden border border-black bg-white sm:w-[180px]">
+                    <div class="size-full transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105">
+                      <BlogVector name={post.vector} />
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="font-body flex flex-wrap items-center gap-x-2 gap-y-1 text-[9px] tracking-wide text-black/50 uppercase sm:gap-x-3 sm:text-[12px]">
+                      <time datetime={post.date}>{formatPostDate(post.date)}</time>
+                      <span aria-hidden="true">·</span>
+                      <span>{post.readingMinutes} min read</span>
+                      {post.tags.map((tag) => (
+                        <span class="hidden rounded-full border border-black/20 px-2 py-1 text-[10px] sm:inline">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <h2 class="font-body mt-2 text-[13px] leading-[1.25] font-bold text-black sm:text-[clamp(1.2rem,2vw,1.6rem)] sm:leading-normal">
+                      {post.title}
+                    </h2>
+                    <p class="font-body mt-2 line-clamp-3 max-w-[560px] text-[11px] leading-[1.45] text-black/70 sm:line-clamp-none sm:text-[15px] sm:leading-[1.55]">
+                      {post.excerpt}
+                    </p>
+
+                    <span class="font-body mt-3 inline-flex items-center gap-2 border-b border-black pb-1 text-[11px] font-bold text-black sm:mt-4 sm:text-[14px]">
+                      Read More
+                      <svg
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                        class="transition-transform duration-300 group-hover:translate-x-1"
+                      >
+                        <path d="m9 18 6-6-6-6"></path>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </main>
+
+    <Footer />
+  </div>
+</BaseLayout>

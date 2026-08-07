@@ -1,0 +1,42 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import BubbleMenu from '@/components/BubbleMenu'
+import CaseStudyView from '@/components/CaseStudyView'
+import { Footer } from '@/sections/Footer'
+import { caseStudies } from '@/data/caseStudies'
+import { profile } from '@/data/content'
+
+export function getStaticPaths() {
+  return caseStudies.map((study) => ({ params: { id: study.id }, props: { study } }))
+}
+
+const { study } = Astro.props
+const site = Astro.site?.toString().replace(/\/$/, '') ?? ''
+const description = `${study.subtitle} — a UI/UX design case study by ${profile.name}.`
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: study.title,
+  headline: study.title,
+  description,
+  url: `${site}/case-studies/${study.id}`,
+  inLanguage: 'en',
+  creator: { '@type': 'Person', name: profile.name, url: site },
+  about: 'UI/UX Design Case Study',
+}
+---
+
+<BaseLayout
+  title={`${study.title} — ${profile.name}`}
+  description={description}
+  path={`/case-studies/${study.id}`}
+  type="article"
+  jsonLd={jsonLd}
+>
+  <div class="bg-white" style="overflow-x: clip">
+    <BubbleMenu client:load />
+    <CaseStudyView id={study.id} />
+    <Footer />
+  </div>
+</BaseLayout>

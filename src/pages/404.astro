@@ -1,0 +1,40 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import BubbleMenu from '@/components/BubbleMenu'
+import { Footer } from '@/sections/Footer'
+import { profile } from '@/data/content'
+---
+
+<BaseLayout
+  title={`Page not found — ${profile.name}`}
+  description="That page does not exist. Head back to the work or the blog."
+  path="/404"
+  noindex={true}
+>
+  <div class="bg-white" style="overflow-x: clip">
+    <BubbleMenu client:load />
+    <main class="grid min-h-svh place-items-center bg-white px-4 py-36 text-center">
+      <div>
+        <p class="font-body text-[11px] font-bold tracking-[1.2px] text-black/40 uppercase">404</p>
+        <h1 class="font-body mt-3 text-[clamp(2rem,5vw,48px)] leading-[1.15] font-semibold text-black">
+          That page does not exist.
+        </h1>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a
+            href="/"
+            class="font-body rounded-full border border-black bg-black px-5 py-3 text-[12px] font-bold tracking-wide text-white uppercase transition-colors hover:bg-white hover:text-black"
+          >
+            Home
+          </a>
+          <a
+            href="/blog"
+            class="font-body rounded-full border border-black bg-white px-5 py-3 text-[12px] font-bold tracking-wide text-black uppercase transition-colors hover:bg-black hover:text-white"
+          >
+            Read the blog
+          </a>
+        </div>
+      </div>
+    </main>
+    <Footer />
+  </div>
+</BaseLayout>

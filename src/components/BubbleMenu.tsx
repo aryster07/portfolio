@@ -1,7 +1,6 @@
 import type { CSSProperties } from 'react'
 import { useEffect, useRef, useState } from 'react'
 import { gsap } from 'gsap'
-import { Link } from 'react-router'
 import { bubbleNavItems, profile } from '@/data/content'
 
 const MENU_BG = '#D7E2EA'
@@ -22,7 +21,10 @@ const STAGGER_DELAY = 0.12
 export default function BubbleMenu() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [showOverlay, setShowOverlay] = useState(false)
-  const [compact, setCompact] = useState(() => window.scrollY > 80)
+  // Starts expanded rather than reading scrollY here: this component is
+  // server-rendered into the static HTML, where `window` does not exist. The
+  // scroll listener below corrects it on the first frame in the browser.
+  const [compact, setCompact] = useState(false)
 
   const overlayRef = useRef<HTMLDivElement>(null)
   const bubblesRef = useRef<HTMLAnchorElement[]>([])
@@ -293,9 +295,9 @@ export default function BubbleMenu() {
                 role="none"
                 className="pill-col box-border flex items-stretch justify-center [flex:0_0_calc(100%/3)]"
               >
-                <Link
+                <a
                   role="menuitem"
-                  to={item.href}
+                  href={item.href}
                   onClick={closeMenu}
                   className={[
                     'pill-link',
@@ -338,7 +340,7 @@ export default function BubbleMenu() {
                   >
                     {item.label}
                   </span>
-                </Link>
+                </a>
               </li>
             ))}
           </ul>

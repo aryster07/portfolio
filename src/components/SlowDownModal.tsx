@@ -1,12 +1,10 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useEffect, useRef } from 'react'
-import { Link } from 'react-router'
 
 interface SlowDownModalProps {
   open: boolean
   /** A different recent post, for readers who bailed because of the topic. */
   suggestion?: { slug: string; title: string }
-  returnTo: string
   onClose: () => void
 }
 
@@ -15,7 +13,7 @@ interface SlowDownModalProps {
  * they slow down and read, or the topic is not for them and we hand them a
  * different one — both are better than watching them leave.
  */
-export function SlowDownModal({ open, suggestion, returnTo, onClose }: SlowDownModalProps) {
+export function SlowDownModal({ open, suggestion, onClose }: SlowDownModalProps) {
   const dismissRef = useRef<HTMLButtonElement>(null)
 
   useEffect(() => {
@@ -87,9 +85,8 @@ export function SlowDownModal({ open, suggestion, returnTo, onClose }: SlowDownM
                 <p className="font-body text-[11px] font-bold tracking-[1.2px] text-black/40 uppercase">
                   Don't like this topic?
                 </p>
-                <Link
-                  to={`/blog/${suggestion.slug}`}
-                  state={{ returnTo }}
+                <a
+                  href={`/blog/${suggestion.slug}`}
                   onClick={onClose}
                   className="font-body group mt-2 flex items-start gap-2 text-[15px] leading-[1.4] font-bold text-black transition-opacity hover:opacity-60"
                 >
@@ -108,7 +105,7 @@ export function SlowDownModal({ open, suggestion, returnTo, onClose }: SlowDownM
                   >
                     <path d="m9 18 6-6-6-6" />
                   </svg>
-                </Link>
+                </a>
               </div>
             )}
           </motion.div>

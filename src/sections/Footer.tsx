@@ -1,4 +1,3 @@
-import { Link } from 'react-router'
 import { footerNav, footerSocials, profile, workCategoriesSummary } from '@/data/content'
 
 /** Footer. The Samarkan "7Frames" watermark sits behind the content. */
@@ -34,12 +33,12 @@ export function Footer() {
             <ul className="mt-4 flex flex-col gap-3">
               {footerNav.map((item) => (
                 <li key={item.label}>
-                  <Link
-                    to={item.href}
+                  <a
+                    href={item.href}
                     className="font-body text-[14px] text-[#D7E2EA]/85 transition-colors hover:text-[#D7E2EA]"
                   >
                     {item.label}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>

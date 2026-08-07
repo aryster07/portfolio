@@ -1,6 +1,5 @@
 import { lazy, Suspense, useMemo, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Link } from 'react-router'
 import { SectionHeading } from '@/components/SectionHeading'
 import { categories, work, type CategoryId, type WorkItem } from '@/data/content'
 
@@ -95,12 +94,12 @@ function Card({ item }: { item: WorkItem }) {
 
   if (item.caseStudyId) {
     return (
-      <Link
-        to={`/case-studies/${item.caseStudyId}`}
+      <a
+        href={`/case-studies/${item.caseStudyId}`}
         className="group block focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#D7E2EA]"
       >
         {body}
-      </Link>
+      </a>
     )
   }
 

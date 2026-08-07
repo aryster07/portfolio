@@ -1,16 +1,9 @@
 import { useEffect, useRef } from 'react'
-import { Link, useParams } from 'react-router'
-import { SiteChrome } from '@/components/SiteChrome'
 import {
   caseStudies,
   type CaseStudyGallery,
   type CaseStudyImage,
 } from '@/data/caseStudies'
-import { profile } from '@/data/content'
-import { SITE_URL, useSeo } from '@/lib/seo'
-import { NotFoundView } from '@/routes/NotFound'
-
-const WORK_SECTION_RETURN = '/#work'
 
 function Arrow({ direction = 'right' }: { direction?: 'left' | 'right' }) {
   return (
@@ -116,8 +109,7 @@ function NumberedList({ items, tone }: { items: readonly string[]; tone: 'light'
 }
 
 /** One reusable detail-view route for all internally published case studies. */
-export default function CaseStudy() {
-  const { id } = useParams<{ id: string }>()
+export default function CaseStudyView({ id }: { id: string }) {
   const titleRef = useRef<HTMLHeadingElement>(null)
   const project = caseStudies.find((caseStudy) => caseStudy.id === id)
 
@@ -125,44 +117,24 @@ export default function CaseStudy() {
     titleRef.current?.focus({ preventScroll: true })
   }, [project?.id])
 
-  useSeo({
-    title: project ? `${project.title} — ${profile.name}` : `Case study not found — ${profile.name}`,
-    description: project?.description ?? 'The requested portfolio case study could not be found.',
-    path: `/case-studies/${id ?? ''}`,
-    image: project?.hero.src,
-    imageAlt: project?.hero.alt,
-    jsonLd: project
-      ? {
-          '@context': 'https://schema.org',
-          '@type': 'CreativeWork',
-          name: project.title,
-          alternateName: project.subtitle,
-          description: project.description,
-          url: `${SITE_URL}/case-studies/${project.id}`,
-          image: `${SITE_URL}${project.hero.src}`,
-          creator: { '@type': 'Person', name: profile.name, url: SITE_URL },
-          keywords: [project.category, ...project.tools].join(', '),
-        }
-      : undefined,
-  })
 
-  if (!project) return <NotFoundView />
+  if (!project) return null
 
   const projectIndex = caseStudies.indexOf(project)
   const nextProject = caseStudies[(projectIndex + 1) % caseStudies.length]
 
   return (
-    <SiteChrome>
+    <>
       <main className="bg-[#F4F4F0] px-5 pt-32 pb-28 text-black sm:px-8 sm:pt-40 md:px-10 lg:px-14">
         <article className="mx-auto max-w-[1400px]">
           <header className="mx-auto max-w-[1040px]">
-            <Link
-              to={WORK_SECTION_RETURN}
+            <a
+              href="/#work"
               className="font-body inline-flex items-center gap-2 text-[12px] font-bold tracking-[0.14em] text-black/55 uppercase transition-colors hover:text-black"
             >
               <Arrow direction="left" />
               Back to work
-            </Link>
+            </a>
 
             <p className="font-body mt-12 text-[11px] font-bold tracking-[0.2em] text-black/45 uppercase sm:mt-16">
               {project.category}
@@ -338,26 +310,26 @@ export default function CaseStudy() {
                 {nextProject.title}
               </p>
             </div>
-            <Link
-              to={`/case-studies/${nextProject.id}`}
+            <a
+              href={`/case-studies/${nextProject.id}`}
               className="group font-body inline-flex w-fit items-center gap-2 rounded-full bg-black px-5 py-3 text-[11px] font-bold tracking-[0.12em] text-[#D7E2EA] uppercase sm:px-6"
             >
               View project
               <Arrow />
-            </Link>
+            </a>
           </nav>
 
           <div className="mt-8 text-center">
-            <Link
-              to={WORK_SECTION_RETURN}
+            <a
+              href="/#work"
               className="font-body inline-flex items-center gap-2 border-b border-black pb-1 text-[12px] font-bold tracking-[0.12em] text-black uppercase"
             >
               View all work
               <Arrow />
-            </Link>
+            </a>
           </div>
         </article>
       </main>
-    </SiteChrome>
+    </>
   )
 }

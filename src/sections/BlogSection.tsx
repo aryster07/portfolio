@@ -1,26 +1,6 @@
-import type { MouseEvent } from 'react'
-import { Link } from 'react-router'
 import { SectionHeading, CircleBleed } from '@/components/SectionHeading'
 import { BlogVector } from '@/components/BlogVectors'
 import { homePosts } from '@/data/content'
-import { BLOG_SECTION_RETURN } from '@/lib/blogNavigation'
-
-function rememberBlogSectionForBrowserBack(event: MouseEvent<HTMLAnchorElement>) {
-  if (
-    event.button !== 0 ||
-    event.metaKey ||
-    event.ctrlKey ||
-    event.shiftKey ||
-    event.altKey ||
-    window.location.pathname !== '/'
-  ) {
-    return
-  }
-
-  // Keep React Router's history metadata intact, but give the current home
-  // entry a meaningful anchor so the browser Back button restores this section.
-  window.history.replaceState(window.history.state, '', BLOG_SECTION_RETURN)
-}
 
 /**
  * "From The Blog" — the second white band, Figma node 6:171.
@@ -45,10 +25,8 @@ export function BlogSection() {
               picture. "Read More" is a span so it stays an affordance rather
               than a second, nested anchor.
             */}
-            <Link
-              to={`/blog/${post.slug}`}
-              state={{ returnTo: BLOG_SECTION_RETURN }}
-              onClick={rememberBlogSectionForBrowserBack}
+            <a
+              href={`/blog/${post.slug}`}
               className="flex h-full min-w-0 flex-col focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-black"
             >
               <div className="aspect-[384/240] w-full overflow-hidden border border-black bg-white">
@@ -88,17 +66,15 @@ export function BlogSection() {
                   <path d="m9 18 6-6-6-6" />
                 </svg>
               </span>
-            </Link>
+            </a>
           </article>
         ))}
       </div>
 
       {/* The section is a teaser; the full archive lives on its own page. */}
       <div className="mt-14 flex justify-center px-4 sm:px-8">
-        <Link
-          to="/blog"
-          state={{ returnTo: BLOG_SECTION_RETURN }}
-          onClick={rememberBlogSectionForBrowserBack}
+        <a
+          href="/blog"
           className="font-body inline-flex items-center gap-2 rounded-full border-2 border-black
                      px-7 py-3 text-[12px] font-bold tracking-widest text-black uppercase
                      transition-colors duration-300 hover:bg-black hover:text-white sm:text-[13px]"
@@ -117,7 +93,7 @@ export function BlogSection() {
           >
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
-        </Link>
+        </a>
       </div>
 
       <CircleBleed edge="bottom" size={120} reveal={0.5} />

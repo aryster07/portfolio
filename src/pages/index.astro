@@ -1,0 +1,101 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro'
+import BubbleMenu from '@/components/BubbleMenu'
+import { HeroSection } from '@/sections/HeroSection'
+import { MarqueeSection } from '@/sections/MarqueeSection'
+import { AboutSection } from '@/sections/AboutSection'
+import { SkillsSection } from '@/sections/SkillsSection'
+import { WorkSection } from '@/sections/WorkSection'
+import { BlogSection } from '@/sections/BlogSection'
+import { VideosSection } from '@/sections/VideosSection'
+import { ContactSection } from '@/sections/ContactSection'
+import { Footer } from '@/sections/Footer'
+import { about, footerSocials, profile, work } from '@/data/content'
+import { sortedPosts } from '@/data/content'
+
+const site = Astro.site?.toString().replace(/\/$/, '') ?? ''
+
+const title = `${profile.name} — UI/UX Designer & Figma Plugin Developer`
+const description =
+  'UI/UX designer from Himachal Pradesh, India. Product and interface design, Figma plugins, and writing on design systems, product thinking and craft.'
+
+const plugins = work.filter((item) => item.category === 'plugins')
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Person',
+      '@id': `${site}/#person`,
+      name: profile.name,
+      alternateName: profile.brand,
+      jobTitle: profile.role,
+      description: about.description,
+      email: `mailto:${profile.email}`,
+      url: site,
+      knowsAbout: [
+        'UI Design',
+        'UX Design',
+        'Design Systems',
+        'Product Design',
+        'Figma Plugin Development',
+        'UX Research',
+      ],
+      address: {
+        '@type': 'PostalAddress',
+        addressRegion: 'Himachal Pradesh',
+        addressCountry: 'IN',
+      },
+      sameAs: footerSocials.map((social) => social.href),
+    },
+    {
+      '@type': 'WebSite',
+      '@id': `${site}/#website`,
+      url: site,
+      name: `${profile.name} — ${profile.role}`,
+      description,
+      inLanguage: 'en',
+      publisher: { '@id': `${site}/#person` },
+    },
+    // The plugins are the assets with real distribution, so they get their own
+    // entries rather than being buried inside the page description.
+    ...plugins.map((plugin) => ({
+      '@type': 'SoftwareApplication',
+      name: plugin.name,
+      description: plugin.meta,
+      applicationCategory: 'DesignApplication',
+      operatingSystem: 'Figma',
+      ...('href' in plugin && plugin.href ? { url: plugin.href } : {}),
+      author: { '@id': `${site}/#person` },
+    })),
+    {
+      '@type': 'Blog',
+      '@id': `${site}/blog#blog`,
+      url: `${site}/blog`,
+      name: `${profile.name} — Blog`,
+      author: { '@id': `${site}/#person` },
+      blogPost: sortedPosts.slice(0, 5).map((p) => ({
+        '@type': 'BlogPosting',
+        headline: p.title,
+        url: `${site}/blog/${p.slug}`,
+        datePublished: p.date,
+      })),
+    },
+  ],
+}
+---
+
+<BaseLayout title={title} description={description} path="/" jsonLd={jsonLd}>
+  <div class="bg-[#0C0C0C]" style="overflow-x: clip">
+    <BubbleMenu client:load />
+    <HeroSection client:load />
+    <MarqueeSection client:visible />
+    <AboutSection client:visible />
+    <SkillsSection client:visible />
+    <WorkSection client:visible />
+    <BlogSection client:visible />
+    <VideosSection client:visible />
+    <ContactSection client:visible />
+    <Footer />
+  </div>
+</BaseLayout>

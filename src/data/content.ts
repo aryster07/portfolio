@@ -52,6 +52,7 @@ export type WorkVectorName =
   | 'select-to-replace'
   | 'scale-mate'
   | 'comment-deck'
+  | 'bunksmart'
 
 interface Category {
   id: CategoryId
@@ -200,11 +201,12 @@ export const work: WorkItem[] = [
 
   // --- Apps -----------------------------------------------------------------
   {
-    id: 'self-attendance-app',
-    name: 'Self Attendance App',
-    meta: 'React / TypeScript / Firebase',
+    id: 'bunksmart',
+    name: 'BunkSmart',
+    meta: 'Attendance App / Google Play',
     category: 'apps',
-    status: 'launching-soon',
+    vector: 'bunksmart',
+    href: 'https://play.google.com/store/apps/details?id=com.apppoetry.android.bunksmart',
   },
 ]
 

@@ -678,6 +678,93 @@ function ScaleMateVector({ reducedMotion }: { reducedMotion: boolean }) {
   )
 }
 
+/** Attendance marks landing on a week grid while the percentage climbs clear. */
+function BunkSmartVector({ reducedMotion }: { reducedMotion: boolean }) {
+  const cells = [
+    { x: 176, y: 150, present: true },
+    { x: 248, y: 150, present: true },
+    { x: 320, y: 150, present: false },
+    { x: 392, y: 150, present: true },
+    { x: 176, y: 222, present: true },
+    { x: 248, y: 222, present: true },
+    { x: 320, y: 222, present: true },
+    { x: 392, y: 222, present: false },
+  ]
+
+  return (
+    <svg {...FRAME}>
+      <text
+        x="320"
+        y="78"
+        fill="#D7E2EA"
+        fillOpacity="0.48"
+        textAnchor="middle"
+        fontFamily="IBM Plex Sans, sans-serif"
+        fontSize="13"
+        fontWeight="600"
+        letterSpacing="2.4"
+      >
+        ATTENDANCE
+      </text>
+
+      <motion.text
+        x="320"
+        y="126"
+        fill="#D7E2EA"
+        textAnchor="middle"
+        fontFamily="IBM Plex Sans, sans-serif"
+        fontSize="34"
+        fontWeight="700"
+        animate={reducedMotion ? undefined : { opacity: [0.35, 0.35, 1, 1, 0.35] }}
+        transition={loop}
+      >
+        75%
+      </motion.text>
+
+      {cells.map((cell, i) => (
+        <g key={`${cell.x}-${cell.y}`}>
+          <rect
+            x={cell.x}
+            y={cell.y}
+            width="56"
+            height="56"
+            rx="14"
+            fill="#0C0C0C"
+            fillOpacity="0.55"
+            stroke="#D7E2EA"
+            strokeOpacity="0.16"
+            strokeWidth="2"
+          />
+          <motion.g
+            opacity={reducedMotion ? 1 : 0}
+            animate={reducedMotion ? undefined : { opacity: [0, 0, 1, 1, 0] }}
+            transition={{ ...loop, delay: i * 0.12 }}
+          >
+            {cell.present ? (
+              <path
+                d={`M${cell.x + 17} ${cell.y + 29}l8 9 15-17`}
+                stroke="#D7E2EA"
+                strokeWidth="4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                fill="none"
+              />
+            ) : (
+              <path
+                d={`M${cell.x + 20} ${cell.y + 20}l16 16M${cell.x + 36} ${cell.y + 20}l-16 16`}
+                stroke="#D7E2EA"
+                strokeOpacity="0.4"
+                strokeWidth="4"
+                strokeLinecap="round"
+              />
+            )}
+          </motion.g>
+        </g>
+      ))}
+    </svg>
+  )
+}
+
 export function WorkVector({ name }: { name: WorkVectorName }) {
   const reducedMotion = Boolean(useReducedMotion())
 
@@ -692,5 +779,7 @@ export function WorkVector({ name }: { name: WorkVectorName }) {
       return <ScaleMateVector reducedMotion={reducedMotion} />
     case 'comment-deck':
       return <GetCommentsVector reducedMotion={reducedMotion} />
+    case 'bunksmart':
+      return <BunkSmartVector reducedMotion={reducedMotion} />
   }
 }
